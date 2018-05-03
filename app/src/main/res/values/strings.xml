@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Popular Movies Stage 1</string>
+    <string name="INTENT_KEY_ID">id</string>
+    <string name="INTENT_KEY_TITLE">title</string>
+    <string name="INTENT_KEY_DATE">date</string>
+    <string name="INTENT_KEY_POSTERURL">poster_url</string>
+    <string name="INTENT_KEY_PLOTSYNOPSIS">plot_synopsis</string>
+    <string name="INTENT_KEY_VOTEAVG">vote_avg</string>
+
+    <string name="POSTER_BASE_URL">http://image.tmdb.org/t/p/</string>;
+    <string name="POSTER_SIZE_W92">w92</string>
+    <string name="POSTER_SIZE_W154">w154</string>
+    <string name="POSTER_SIZE_W185">w185</string>
+    <string name="POSTER_SIZE_W342">w342</string>
+    <string name="POSTER_SIZE_W500">w500</string>
+    <string name="POSTER_SIZE_W780">w780</string>
+    <string name="POSTER_SIZE_ORIGINAL">original</string>
+
+    <!-- Catalog Activity -->
+    <string name="error_message">Failed to get results, please try again.</string>
+    <string name="img_thumb_content_description">Movie Poster Thumbnail</string>
+    <string name="img_star_content_description">Movie Favorite Star</string>
+
+        <!-- Menu -->
+        <string name="menu_title_popular">Popular Movies</string>
+        <string name="menu_title_toprated">Top Rated Movies</string>
+
+    <!-- Detail Activity-->
+    <string name="detail_also_known_as_label">Also known as:</string>
+    <string name="detail_place_of_origin_label">Place of origin:</string>
+    <string name="detail_description_label">Description:</string>
+    <string name="detail_ingredients_label">Ingredients:</string>
+    <string name="img_poster_content_description">Movie Poster</string>
+    <string name="label_overview">Story</string>
+    <string name="text_title">Movie Title</string>
+    <string name="text_release_date">Release Date</string>
+    <string name="text_overview">Movie Overview</string>
+
+    <!-- Content descriptions-->
+    <string name="movie_poster_content_description">Movie Poster</string>
+
+    <!-- Error messages-->
+    <string name="detail_error_message">Movie data not available</string>
+</resources>
