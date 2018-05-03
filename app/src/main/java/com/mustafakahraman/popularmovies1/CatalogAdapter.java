@@ -11,14 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.mustafakahraman.popularmovies1.data.Movie;
-import com.mustafakahraman.popularmovies1.data.NetworkUtils;
+import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by kahraman on 14.04.2018.

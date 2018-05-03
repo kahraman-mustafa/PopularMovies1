@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Popular Movies Stage 1</string>
+    <string name="app_name">Popular Movies</string>
     <string name="INTENT_KEY_ID">id</string>
     <string name="INTENT_KEY_TITLE">title</string>
     <string name="INTENT_KEY_DATE">date</string>
@@ -31,7 +31,7 @@
     <string name="detail_description_label">Description:</string>
     <string name="detail_ingredients_label">Ingredients:</string>
     <string name="img_poster_content_description">Movie Poster</string>
-    <string name="label_overview">Story</string>
+    <string name="label_overview">Plot Synopsis</string>
     <string name="text_title">Movie Title</string>
     <string name="text_release_date">Release Date</string>
     <string name="text_overview">Movie Overview</string>

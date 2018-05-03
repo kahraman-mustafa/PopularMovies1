@@ -1,15 +1,14 @@
 package com.mustafakahraman.popularmovies1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mustafakahraman.popularmovies1.data.Movie;
-import com.mustafakahraman.popularmovies1.data.NetworkUtils;
+import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -68,11 +67,17 @@ public class MovieDetail extends AppCompatActivity {
     private void populateUIWithMovieData(){
         ButterKnife.bind(this);
 
+        //rbVoteAvg.setNumStars(10);
+        //rbVoteAvg.setMax(10);
+        //rbVoteAvg.setStepSize(0.1f);
+
         Picasso.with(this)
                 .load(NetworkUtils.buildPosterUrl(
                         this,
-                        getString(R.string.POSTER_SIZE_W185),
+                        getString(R.string.POSTER_SIZE_W342),
                         mMovie.getPosterUrl()))
+                //.placeholder(R.drawable.poster_placeholder)
+                .error(R.drawable.poster_placeholder)
                 .into(imgPoster);
 
         tvTitle.setText(mMovie.getTitle());

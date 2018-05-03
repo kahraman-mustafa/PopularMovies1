@@ -1,9 +1,11 @@
 package com.mustafakahraman.popularmovies1;
 
+import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +16,10 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.mustafakahraman.popularmovies1.data.Movie;
-import com.mustafakahraman.popularmovies1.data.NetworkUtils;
+import com.mustafakahraman.popularmovies1.helper.ConnectionLiveData;
+import com.mustafakahraman.popularmovies1.helper.ConnectionModel;
+import com.mustafakahraman.popularmovies1.helper.ItemOffsetDecoration;
+import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
 
 import org.json.JSONException;
 
@@ -32,6 +36,8 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
     private ProgressBar mLoadingBar;
     private TextView mTvError;
 
+    public static String moviesOrderType = NetworkUtils.ORDER_BY_POPULARITY;
+
     private ArrayList<Movie> movieCatalogList = new ArrayList<Movie>();
 
     @Override
@@ -42,17 +48,47 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         mLoadingBar = (ProgressBar) findViewById(R.id.pb_loading_bar);
         mTvError = (TextView) findViewById(R.id.tv_error_message);
         mCatalogRecyclerView = (RecyclerView) findViewById(R.id.rv_movie_catalog);
+        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(MoviesCatalog.this, R.dimen.item_offset);
+        mCatalogRecyclerView.addItemDecoration(itemDecoration);
 
-        showMovies(NetworkUtils.ORDER_BY_POPULARITY);
+        ConnectionLiveData connectionLiveData = new ConnectionLiveData(getApplicationContext());
+        connectionLiveData.observe(this, new Observer<ConnectionModel>() {
+            @Override
+            public void onChanged(@Nullable ConnectionModel connection) {
+                if (connection.getIsConnected()) {
+                    switch (connection.getType()) {
+                        case ConnectionModel.WifiData:
+                            if(mTvError.getVisibility() == View.VISIBLE) {
+                                showMoviesIfInternetAvailable();
+                            }
+                            break;
+                        case ConnectionModel.MobileData:
+                            if(mTvError.getVisibility() == View.VISIBLE) {
+                                showMoviesIfInternetAvailable();
+                            }
+                            break;
+                    }
+                } else {
+                    // Internet disconnected, Do something
+                }
+            }
+        });
+
+        showMoviesIfInternetAvailable();
     }
 
-    private void showMovies(String orderBy) {
-        String queryUrl =
-                NetworkUtils.buildQueryUrl(orderBy).toString();
+    private void showMoviesIfInternetAvailable() {
+        NetworkUtils.InternetCheckTask internetCheckTask = new NetworkUtils.InternetCheckTask();
+        internetCheckTask.execute(this);
+    }
 
+    public void showMovies() {
+        String queryUrl = NetworkUtils.buildQueryUrl(moviesOrderType).toString();
         Log.d(LOG, queryUrl);
+
         new FetchMoviesTask().execute(queryUrl);
     }
+
 
     public class FetchMoviesTask extends AsyncTask<String, Void, ArrayList<Movie>> {
 
@@ -116,19 +152,19 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         // COMPLETED (1): Add movie detail activity and layout and handle item click
     }
 
-    private void displayLoading() {
+    public void displayLoading() {
         mCatalogRecyclerView.setVisibility(View.INVISIBLE);
         mTvError.setVisibility(View.INVISIBLE);
         mLoadingBar.setVisibility(View.VISIBLE);
     }
 
-    private void displayCatalog() {
+    public void displayCatalog() {
         mCatalogRecyclerView.setVisibility(View.VISIBLE);
         mTvError.setVisibility(View.INVISIBLE);
         mLoadingBar.setVisibility(View.INVISIBLE);
     }
 
-    private void displayError() {
+    public void displayError() {
         mCatalogRecyclerView.setVisibility(View.INVISIBLE);
         mTvError.setVisibility(View.VISIBLE);
         mLoadingBar.setVisibility(View.INVISIBLE);
@@ -157,21 +193,22 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO (2): Move the control for the catalog order to settings
         int menuItemIdSelected = item.getItemId();
         switch (menuItemIdSelected) {
             case R.id.menu_item_popular:
                 Log.d(LOG, "Action Selected: Show Popular");
-                showMovies(NetworkUtils.ORDER_BY_POPULARITY);
+                moviesOrderType = NetworkUtils.ORDER_BY_POPULARITY;
+                showMoviesIfInternetAvailable();
                 return true;
             case R.id.menu_item_toprated:
                 Log.d(LOG, "Action Selected: Show Top Rated");
-                showMovies(NetworkUtils.ORDER_BY_RATING);
+                moviesOrderType = NetworkUtils.ORDER_BY_TOPRATED;
+                showMoviesIfInternetAvailable();
                 return true;
             default:
                 return true;
         }
     }
 
-    // TODO (3): Add content provider concept to handle data
-    // TODO (4): Add asynctask loader concept
 }

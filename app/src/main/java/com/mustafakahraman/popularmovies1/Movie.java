@@ -1,4 +1,4 @@
-package com.mustafakahraman.popularmovies1.data;
+package com.mustafakahraman.popularmovies1;
 
 /**
  * Created by kahraman on 17.04.2018.

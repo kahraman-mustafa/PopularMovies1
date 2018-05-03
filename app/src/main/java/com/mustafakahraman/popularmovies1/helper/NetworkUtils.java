@@ -1,8 +1,12 @@
-package com.mustafakahraman.popularmovies1.data;
+package com.mustafakahraman.popularmovies1.helper;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.util.Log;
 
+import com.mustafakahraman.popularmovies1.Movie;
+import com.mustafakahraman.popularmovies1.MoviesCatalog;
 import com.mustafakahraman.popularmovies1.R;
 
 import org.json.JSONArray;
@@ -10,7 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -24,17 +30,17 @@ import okhttp3.Response;
 
 public class NetworkUtils {
 
-    public static final String URL_SCHEME = "https";
-    public static final String URL_AUTHORITY = "api.themoviedb.org";
-    public static final String URL_PATH_1 = "3";
-    public static final String URL_PATH_2 = "movie";
+    private static final String URL_SCHEME = "https";
+    private static final String URL_AUTHORITY = "api.themoviedb.org";
+    private static final String URL_PATH_1 = "3";
+    private static final String URL_PATH_2 = "movie";
     public static final String ORDER_BY_POPULARITY = "popular";
-    public static final String ORDER_BY_RATING = "top_rated";
-    public static final String KEY_APIKEY = "api_key";
-    public static final String KEY_LANGUAGE = "language";
-    public static final String KEY_PAGE = "page";
-    public static final String VALUE_APIKEY = "YOUR API KEY HERE";
-    public static final String VALUE_LANGUAGE_EN = "en-US";
+    public static final String ORDER_BY_TOPRATED = "top_rated";
+    private static final String KEY_APIKEY = "api_key";
+    private static final String KEY_LANGUAGE = "language";
+    private static final String KEY_PAGE = "page";
+    private static final String VALUE_APIKEY = "YOUR_API_KEY_HERE";
+    private static final String VALUE_LANGUAGE_EN = "en-US";
 
     public static JSONObject getHttpJSONResponse(String url) throws IOException, JSONException {
 
@@ -65,6 +71,7 @@ public class NetworkUtils {
             String movieTitle = jsonMovie.optString("title", "Title Not Available");
             String movieReleaseDate = jsonMovie.optString("release_date", "Date Not Available");
             double movieVoteAvg = jsonMovie.optDouble("vote_average", 0);
+            Log.d("Vote Average: " + movieTitle, String.valueOf(movieVoteAvg));
             String moviePosterUrl = jsonMovie.optString("poster_path", "");
             String moviePlotSynopsis = jsonMovie.optString("overview", "Story Not Available");
 
@@ -103,4 +110,47 @@ public class NetworkUtils {
     public static String buildPosterUrl(Context context, String posterSize, String posterPath) {
         return context.getString(R.string.POSTER_BASE_URL) + posterSize + posterPath;
     }
+
+    public static class InternetCheckTask extends AsyncTask<MoviesCatalog, Void, Boolean> {
+
+        private MoviesCatalog atMoviesCatalog;
+
+        @Override protected Boolean doInBackground(MoviesCatalog... moviesCatalogs) {
+            try {
+                atMoviesCatalog = moviesCatalogs[0];
+                int connectionTimeOutInMillisec = 1500;
+                Socket sock = new Socket();
+                sock.connect(new InetSocketAddress("8.8.8.8", 53), connectionTimeOutInMillisec);
+                sock.close();
+                return true;
+            } catch (IOException e) {
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean isInternetAvailable) {
+            super.onPostExecute(isInternetAvailable);
+            if(isInternetAvailable) {
+                atMoviesCatalog.showMovies();
+            } else {
+                atMoviesCatalog.displayError();
+            }
+        }
+    }
+
+    /*
+    public static boolean isConnectedToNetwork(Context context) {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = null;
+        try {
+            activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    }
+    */
 }
