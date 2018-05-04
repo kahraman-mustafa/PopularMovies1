@@ -6,8 +6,10 @@ In order to use its API, a unique api-key is required for each app/developer.</p
 <p>Because it is illegal to use it in a public repository, it is removed from the source code.</p>
 </blockquote>
 <p>Before running the project, you need to replace;</p>
+<blockquote>
 <pre><code>private static final String VALUE_APIKEY = "YOUR_API_KEY_HERE";
 </code></pre>
+</blockquote>
 <p>with your own api-key.</p>
 <p>You can get one from <a href="http://themoviedb.org/documentation/api">API  page</a>.</p>
 
