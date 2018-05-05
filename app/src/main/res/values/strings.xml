@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">Popular Movies</string>
+
+    <string name="INTENT_KEY_MOVIE">movie_data</string>
+    <string name="INTENT_KEY_MOVIE_CATALOG">movie_catalog_data</string>
+    <!--
     <string name="INTENT_KEY_ID">id</string>
     <string name="INTENT_KEY_TITLE">title</string>
     <string name="INTENT_KEY_DATE">date</string>
     <string name="INTENT_KEY_POSTERURL">poster_url</string>
     <string name="INTENT_KEY_PLOTSYNOPSIS">plot_synopsis</string>
     <string name="INTENT_KEY_VOTEAVG">vote_avg</string>
+    -->
 
     <string name="POSTER_BASE_URL">http://image.tmdb.org/t/p/</string>;
     <string name="POSTER_SIZE_W92">w92</string>
@@ -21,9 +26,9 @@
     <string name="img_thumb_content_description">Movie Poster Thumbnail</string>
     <string name="img_star_content_description">Movie Favorite Star</string>
 
-        <!-- Menu -->
-        <string name="menu_title_popular">Popular Movies</string>
-        <string name="menu_title_toprated">Top Rated Movies</string>
+    <!-- Menu -->
+    <string name="menu_title_popular">Popular Movies</string>
+    <string name="menu_title_toprated">Top Rated Movies</string>
 
     <!-- Detail Activity-->
     <string name="detail_also_known_as_label">Also known as:</string>

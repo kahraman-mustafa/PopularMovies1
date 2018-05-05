@@ -1,5 +1,6 @@
 package com.mustafakahraman.popularmovies1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,7 +39,34 @@ public class MovieDetail extends AppCompatActivity {
         populateUIWithMovieData();
     }
 
+    // invoked when the activity may be temporarily destroyed, save the instance state here
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelable(getString(R.string.INTENT_KEY_MOVIE), mMovie);
+
+        // call superclass to save any view hierarchy
+        super.onSaveInstanceState(outState);
+    }
+
+    // This callback is called only when there is a saved instance that is previously saved by using
+    // onSaveInstanceState(). We restore some state in onCreate(), while we can optionally restore
+    // other state here, possibly usable after onStart() has completed.
+    // The savedInstanceState Bundle is same as the one used in onCreate().
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        mMovie = savedInstanceState.getParcelable(getString(R.string.INTENT_KEY_MOVIE));
+    }
+
     private void setMovieDataByIntent(Intent intent){
+
+        if(intent.hasExtra(getString(R.string.INTENT_KEY_MOVIE))){
+            mMovie = (Movie) getIntent().getParcelableExtra(getString(R.string.INTENT_KEY_MOVIE));
+        }  else {
+            closeOnError();
+            return;
+        }
+
+        /* Before learning Parcelable
         if(intent.hasExtra(getString(R.string.INTENT_KEY_ID))){
             mMovie.set_id(intent.getLongExtra(getString(R.string.INTENT_KEY_ID), -1));
             if (mMovie.get_id() == -1) {
@@ -62,6 +90,7 @@ public class MovieDetail extends AppCompatActivity {
         if(intent.hasExtra(getString(R.string.INTENT_KEY_VOTEAVG))){
             mMovie.setVoteAvg(intent.getDoubleExtra(getString(R.string.INTENT_KEY_VOTEAVG), 0));
         }
+        */
     }
 
     private void populateUIWithMovieData(){
@@ -76,9 +105,11 @@ public class MovieDetail extends AppCompatActivity {
                         this,
                         getString(R.string.POSTER_SIZE_W342),
                         mMovie.getPosterUrl()))
-                //.placeholder(R.drawable.poster_placeholder)
+                .placeholder(R.drawable.poster_placeholder)
+                //.resize(R.dimens.poster_width, R.dimens.poster_height)
                 .error(R.drawable.poster_placeholder)
                 .into(imgPoster);
+        // TODO (6): Resize poster for different screen densities
 
         tvTitle.setText(mMovie.getTitle());
         tvDate.setText(mMovie.getDate());

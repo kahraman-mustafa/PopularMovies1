@@ -3,6 +3,7 @@ package com.mustafakahraman.popularmovies1;
 import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -47,10 +48,12 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
 
         mLoadingBar = (ProgressBar) findViewById(R.id.pb_loading_bar);
         mTvError = (TextView) findViewById(R.id.tv_error_message);
+
         mCatalogRecyclerView = (RecyclerView) findViewById(R.id.rv_movie_catalog);
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(MoviesCatalog.this, R.dimen.item_offset);
         mCatalogRecyclerView.addItemDecoration(itemDecoration);
 
+        // Internet connection/availability change oberserver initialization
         ConnectionLiveData connectionLiveData = new ConnectionLiveData(getApplicationContext());
         connectionLiveData.observe(this, new Observer<ConnectionModel>() {
             @Override
@@ -74,14 +77,54 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
             }
         });
 
-        showMoviesIfInternetAvailable();
+        // get movie catalog from saved instance state if saved before
+        if(savedInstanceState != null) {
+            movieCatalogList = savedInstanceState.getParcelableArrayList(getString(R.string.INTENT_KEY_MOVIE_CATALOG));
+        }
+
+        if(movieCatalogList != null && movieCatalogList.size() > 0) {
+            populateUIWithMovieCatalog();
+        } else {
+            showMoviesIfInternetAvailable();
+        }
+
     }
 
+    // Movies data is either downloaded or restored, then show them in UI
+    private void populateUIWithMovieCatalog() {
+        if (movieCatalogList != null && movieCatalogList.size() > 0) {
+            displayCatalog();
+        } else {
+            displayError();
+        }
+
+        int orientation = getResources().getConfiguration().orientation;
+        // COMPLETED (5): Change number of columns according to layout portrait or landscape
+        int numColumns;
+        if(orientation == Configuration.ORIENTATION_PORTRAIT) {
+            numColumns = 4;
+        } else {
+            numColumns = 6;
+        }
+
+        GridLayoutManager layoutManager = new GridLayoutManager(MoviesCatalog.this, numColumns);
+
+        mCatalogAdapter = new CatalogAdapter(MoviesCatalog.this, movieCatalogList);
+        mCatalogAdapter.setClickListener(MoviesCatalog.this);
+
+        mCatalogRecyclerView.setLayoutManager(layoutManager);
+        mCatalogRecyclerView.setAdapter(mCatalogAdapter);
+    }
+
+    // Checks whether the internet is available or not
+    // if available then call showMovies and download movies data
+    // if not then shows an error message
     private void showMoviesIfInternetAvailable() {
         NetworkUtils.InternetCheckTask internetCheckTask = new NetworkUtils.InternetCheckTask();
         internetCheckTask.execute(this);
     }
 
+    // Provided that internet is available, download movie data
     public void showMovies() {
         String queryUrl = NetworkUtils.buildQueryUrl(moviesOrderType).toString();
         Log.d(LOG, queryUrl);
@@ -89,7 +132,27 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         new FetchMoviesTask().execute(queryUrl);
     }
 
+    // invoked when the activity may be temporarily destroyed, save the instance state here
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList(getString(R.string.INTENT_KEY_MOVIE_CATALOG), movieCatalogList);
 
+        // call superclass to save any view hierarchy
+        super.onSaveInstanceState(outState);
+    }
+
+    // This callback is called only when there is a saved instance that is previously saved by using
+    // onSaveInstanceState(). We restore some state in onCreate(), while we can optionally restore
+    // other state here, possibly usable after onStart() has completed.
+    // The savedInstanceState Bundle is same as the one used in onCreate().
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Do sth
+    }
+
+    // This is called when the internet is available
+    // it is responsible to show loading bar when data is downloading
+    // and of course to download movies data
     public class FetchMoviesTask extends AsyncTask<String, Void, ArrayList<Movie>> {
 
         @Override
@@ -121,23 +184,11 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
 
             movieCatalogList = movies;
 
-            if (movieCatalogList != null) {
-                displayCatalog();
-            } else {
-                displayError();
-            }
-
-            int numColumns = 3;
-            GridLayoutManager layoutManager = new GridLayoutManager(MoviesCatalog.this, numColumns);
-
-            mCatalogAdapter = new CatalogAdapter(MoviesCatalog.this, movies);
-            mCatalogAdapter.setClickListener(MoviesCatalog.this);
-
-            mCatalogRecyclerView.setLayoutManager(layoutManager);
-            mCatalogRecyclerView.setAdapter(mCatalogAdapter);
+            populateUIWithMovieCatalog();
         }
     }
 
+    // When a movie is clicked, this initialize opening detail activiy screen using selected movie info
     @Override
     public void onItemClick(View view, int position) {
 
@@ -152,37 +203,45 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         // COMPLETED (1): Add movie detail activity and layout and handle item click
     }
 
-    public void displayLoading() {
-        mCatalogRecyclerView.setVisibility(View.INVISIBLE);
-        mTvError.setVisibility(View.INVISIBLE);
-        mLoadingBar.setVisibility(View.VISIBLE);
-    }
-
-    public void displayCatalog() {
-        mCatalogRecyclerView.setVisibility(View.VISIBLE);
-        mTvError.setVisibility(View.INVISIBLE);
-        mLoadingBar.setVisibility(View.INVISIBLE);
-    }
-
-    public void displayError() {
-        mCatalogRecyclerView.setVisibility(View.INVISIBLE);
-        mTvError.setVisibility(View.VISIBLE);
-        mLoadingBar.setVisibility(View.INVISIBLE);
-    }
-
+    // Helper function to start detail activity
     private void startDetailActivity(Movie movie) {
         Context contextStartFrom = MoviesCatalog.this;
         Class classToOpen = MovieDetail.class;
-        Intent intentOpenDetail = new Intent(contextStartFrom, classToOpen);
 
+        Intent intentOpenDetail = new Intent(contextStartFrom, classToOpen);
+        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_MOVIE), movie); // using the (String key, Parcelable value) overload!
+
+        startActivity(intentOpenDetail);
+
+        /* Before learning Parcelable
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_ID), movie.get_id());
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_TITLE), movie.getTitle());
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_DATE), movie.getDate());
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_POSTERURL), movie.getPosterUrl());
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_PLOTSYNOPSIS), movie.getPlotSynopsis());
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_VOTEAVG), movie.getVoteAvg());
+        */
+    }
 
-        startActivity(intentOpenDetail);
+    // Helper method to show loading bar
+    public void displayLoading() {
+        mCatalogRecyclerView.setVisibility(View.INVISIBLE);
+        mTvError.setVisibility(View.INVISIBLE);
+        mLoadingBar.setVisibility(View.VISIBLE);
+    }
+
+    // Helper method to show movie catalog view
+    public void displayCatalog() {
+        mCatalogRecyclerView.setVisibility(View.VISIBLE);
+        mTvError.setVisibility(View.INVISIBLE);
+        mLoadingBar.setVisibility(View.INVISIBLE);
+    }
+
+    // Helper method to show error message
+    public void displayError() {
+        mCatalogRecyclerView.setVisibility(View.INVISIBLE);
+        mTvError.setVisibility(View.VISIBLE);
+        mLoadingBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
