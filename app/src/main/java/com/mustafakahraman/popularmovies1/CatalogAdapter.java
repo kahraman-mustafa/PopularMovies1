@@ -102,7 +102,10 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
             Movie movie = mMovieList.get(gridItemIndex);
 
             tvTitle.setText(movie.getTitle());
-            tvDate.setText(movie.getDate());
+            String dateAndVoteAvg = movie.getVoteAvg() + "/10"
+                                    + " - "
+                                    + movie.getDate().substring(0,4);
+            tvDate.setText(dateAndVoteAvg);
             Picasso.with(mContext)
                     .load(NetworkUtils.buildPosterUrl(
                             mContext,

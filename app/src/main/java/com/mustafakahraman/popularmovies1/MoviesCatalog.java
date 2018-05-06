@@ -99,12 +99,13 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         }
 
         int orientation = getResources().getConfiguration().orientation;
-        // COMPLETED (5): Change number of columns according to layout portrait or landscape
+        // COMPLETED : Change number of columns according to layout portrait or landscape
+        // TODO : Adjust number of columns according to screen/pixel denstiy
         int numColumns;
         if(orientation == Configuration.ORIENTATION_PORTRAIT) {
-            numColumns = 4;
+            numColumns = 3;
         } else {
-            numColumns = 6;
+            numColumns = 5;
         }
 
         GridLayoutManager layoutManager = new GridLayoutManager(MoviesCatalog.this, numColumns);
