@@ -37,6 +37,8 @@
     <string name="detail_ingredients_label">Ingredients:</string>
     <string name="img_poster_content_description">Movie Poster</string>
     <string name="label_overview">Plot Synopsis</string>
+    <string name="label_reviews">User Reviews</string>
+    <string name="label_trailers">Trailers</string>
     <string name="text_title">Movie Title</string>
     <string name="text_release_date">Release Date</string>
     <string name="text_overview">Movie Overview</string>
