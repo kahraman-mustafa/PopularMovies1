@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.mustafakahraman.popularmovies1.databinding.ActivityMoviesCatalogBinding;
 import com.mustafakahraman.popularmovies1.helper.ConnectionLiveData;
 import com.mustafakahraman.popularmovies1.helper.ConnectionModel;
 import com.mustafakahraman.popularmovies1.helper.ItemOffsetDecoration;
@@ -29,13 +31,11 @@ import java.util.ArrayList;
 
 public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.ItemClickListener{
 
+    ActivityMoviesCatalogBinding mBinding;
+
     private final String LOG = "CatalogActivity";
 
     private CatalogAdapter mCatalogAdapter;
-
-    private RecyclerView mCatalogRecyclerView;
-    private ProgressBar mLoadingBar;
-    private TextView mTvError;
 
     public static String moviesOrderType = NetworkUtils.ORDER_BY_POPULARITY;
 
@@ -44,14 +44,10 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movies_catalog);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_movies_catalog);
 
-        mLoadingBar = (ProgressBar) findViewById(R.id.pb_loading_bar);
-        mTvError = (TextView) findViewById(R.id.tv_error_message);
-
-        mCatalogRecyclerView = (RecyclerView) findViewById(R.id.rv_movie_catalog);
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(MoviesCatalog.this, R.dimen.item_offset);
-        mCatalogRecyclerView.addItemDecoration(itemDecoration);
+        mBinding.rvMovieCatalog.addItemDecoration(itemDecoration);
 
         // Internet connection/availability change oberserver initialization
         ConnectionLiveData connectionLiveData = new ConnectionLiveData(getApplicationContext());
@@ -61,12 +57,12 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
                 if (connection.getIsConnected()) {
                     switch (connection.getType()) {
                         case ConnectionModel.WifiData:
-                            if(mTvError.getVisibility() == View.VISIBLE) {
+                            if(mBinding.tvErrorMessage.getVisibility() == View.VISIBLE) {
                                 showMoviesIfInternetAvailable();
                             }
                             break;
                         case ConnectionModel.MobileData:
-                            if(mTvError.getVisibility() == View.VISIBLE) {
+                            if(mBinding.tvErrorMessage.getVisibility() == View.VISIBLE) {
                                 showMoviesIfInternetAvailable();
                             }
                             break;
@@ -113,8 +109,8 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         mCatalogAdapter = new CatalogAdapter(MoviesCatalog.this, movieCatalogList);
         mCatalogAdapter.setClickListener(MoviesCatalog.this);
 
-        mCatalogRecyclerView.setLayoutManager(layoutManager);
-        mCatalogRecyclerView.setAdapter(mCatalogAdapter);
+        mBinding.rvMovieCatalog.setLayoutManager(layoutManager);
+        mBinding.rvMovieCatalog.setAdapter(mCatalogAdapter);
     }
 
     // Checks whether the internet is available or not
@@ -213,36 +209,27 @@ public class MoviesCatalog extends AppCompatActivity implements CatalogAdapter.I
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_MOVIE), movie); // using the (String key, Parcelable value) overload!
 
         startActivity(intentOpenDetail);
-
-        /* Before learning Parcelable
-        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_ID), movie.get_id());
-        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_TITLE), movie.getTitle());
-        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_DATE), movie.getDate());
-        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_POSTERURL), movie.getPosterUrl());
-        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_PLOTSYNOPSIS), movie.getPlotSynopsis());
-        intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_VOTEAVG), movie.getVoteAvg());
-        */
     }
 
     // Helper method to show loading bar
     public void displayLoading() {
-        mCatalogRecyclerView.setVisibility(View.INVISIBLE);
-        mTvError.setVisibility(View.INVISIBLE);
-        mLoadingBar.setVisibility(View.VISIBLE);
+        mBinding.rvMovieCatalog.setVisibility(View.INVISIBLE);
+        mBinding.tvErrorMessage.setVisibility(View.INVISIBLE);
+        mBinding.pbLoadingBar.setVisibility(View.VISIBLE);
     }
 
     // Helper method to show movie catalog view
     public void displayCatalog() {
-        mCatalogRecyclerView.setVisibility(View.VISIBLE);
-        mTvError.setVisibility(View.INVISIBLE);
-        mLoadingBar.setVisibility(View.INVISIBLE);
+        mBinding.rvMovieCatalog.setVisibility(View.VISIBLE);
+        mBinding.tvErrorMessage.setVisibility(View.INVISIBLE);
+        mBinding.pbLoadingBar.setVisibility(View.INVISIBLE);
     }
 
     // Helper method to show error message
     public void displayError() {
-        mCatalogRecyclerView.setVisibility(View.INVISIBLE);
-        mTvError.setVisibility(View.VISIBLE);
-        mLoadingBar.setVisibility(View.INVISIBLE);
+        mBinding.rvMovieCatalog.setVisibility(View.INVISIBLE);
+        mBinding.tvErrorMessage.setVisibility(View.VISIBLE);
+        mBinding.pbLoadingBar.setVisibility(View.INVISIBLE);
     }
 
     @Override

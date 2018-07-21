@@ -45,7 +45,7 @@ public class Movie implements Parcelable {
     public void writeToParcel(Parcel out, int flags) {
         out.writeLong(_id);
         out.writeDouble(voteAvg);
-        out.writeInt((int) (isFavorite ? 1 : 0));
+        out.writeInt((isFavorite ? 1 : 0));
         out.writeString(title);
         out.writeString(date);
         out.writeString(posterUrl);
