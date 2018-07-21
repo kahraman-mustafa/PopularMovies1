@@ -10,24 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fbbde66-5236-47d4-a143-2b7788efc913" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_0_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/CardViewUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-hdpi/dimens.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-mdpi/dimens.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-xhdpi/dimens.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-xxhdpi/dimens.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-xxxhdpi/dimens.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.5/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +45,8 @@
       <file leaf-file-name="NetworkUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="96">
+              <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,52 +54,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardViewUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/CardViewUtils.java">
+      <file leaf-file-name="CatalogAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/CatalogAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+            <state relative-caret-position="1335">
+              <caret line="105" column="43" lean-forward="false" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1370#1849#0" expanded="true" />
-                <element signature="e#1848#1849#0" expanded="true" />
-                <element signature="e#1969#2134#0" expanded="true" />
-                <element signature="e#2133#2134#0" expanded="true" />
-                <element signature="e#2729#3146#0" expanded="true" />
-                <element signature="e#3145#3146#0" expanded="true" />
-                <element signature="e#3371#3787#0" expanded="true" />
-                <element signature="e#3786#3787#0" expanded="true" />
+                <element signature="e#1677#1678#0" expanded="true" />
+                <element signature="e#1717#1718#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="MovieDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MovieDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="28" column="59" lean-forward="false" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="1500">
+              <caret line="113" column="43" lean-forward="false" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoviesCatalog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MoviesCatalog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="508">
+              <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_movie_detail.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1193">
-              <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
               <folding>
-                <element signature="e#776#816#0" expanded="true" />
-                <element signature="e#2237#2257#0" expanded="true" />
-                <element signature="e#2766#2793#0" expanded="true" />
-                <element signature="e#3337#3361#0" expanded="true" />
-                <element signature="e#4364#4387#0" expanded="true" />
-                <element signature="e#5443#5466#0" expanded="true" />
+                <element signature="e#1199#1223#0" expanded="true" />
+                <element signature="e#4482#4506#0" expanded="true" />
+                <element signature="e#5230#5253#0" expanded="true" />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -115,12 +112,25 @@
       <file leaf-file-name="activity_movies_catalog.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_movie_detail.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1410">
+              <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -130,9 +140,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="valueResourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -2099,21 +2109,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/Movie.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MovieDetail.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/CatalogAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MoviesCatalog.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-mdpi/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-hdpi/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-xhdpi/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-xxhdpi/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-xxxhdpi/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/CardViewUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" />
       </list>
     </option>
   </component>
@@ -2153,9 +2156,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2205,22 +2209,10 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
-            <path>
-              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="dimens" type="c431d0b8:AndroidResGroupNode" />
-            </path>
-            <path>
-              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2424,8 +2416,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="826" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2441,7 +2434,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21101573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14306152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2468,28 +2461,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2505,9 +2476,9 @@
         <state relative-caret-position="1335">
           <caret line="105" column="43" lean-forward="false" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2517,7 +2488,7 @@
         <state relative-caret-position="1500">
           <caret line="113" column="43" lean-forward="false" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2526,6 +2497,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2560#2561#0" expanded="false" />
+            <element signature="e#2584#2585#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3170#3171#0" expanded="false" />
+            <element signature="e#3310#3311#0" expanded="false" />
+            <element signature="e#3356#3357#0" expanded="false" />
+            <element signature="e#3391#3392#0" expanded="false" />
+            <element signature="e#3417#3418#0" expanded="false" />
+            <element signature="e#3453#3454#0" expanded="false" />
+            <element signature="e#3483#3484#0" expanded="false" />
+            <element signature="e#3518#3519#0" expanded="false" />
+            <element signature="e#3551#3552#0" expanded="false" />
+            <element signature="e#3600#3601#0" expanded="false" />
+            <element signature="e#3637#3638#0" expanded="false" />
+            <element signature="e#3673#3674#0" expanded="false" />
+            <element signature="e#3713#3714#0" expanded="false" />
+            <element signature="e#3745#3746#0" expanded="false" />
+            <element signature="e#3773#3774#0" expanded="false" />
+            <element signature="e#3815#3816#0" expanded="false" />
+            <element signature="e#3849#3850#0" expanded="false" />
+            <element signature="e#3880#3881#0" expanded="false" />
+            <element signature="e#3907#3908#0" expanded="false" />
+            <element signature="e#3947#3948#0" expanded="false" />
+            <element signature="e#3979#3980#0" expanded="false" />
+            <element signature="e#4015#4016#0" expanded="false" />
+            <element signature="e#4047#4048#0" expanded="false" />
+            <element signature="e#4097#4098#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
+            <element signature="e#4173#4174#0" expanded="false" />
+            <element signature="e#4203#4204#0" expanded="false" />
+            <element signature="e#4249#4250#0" expanded="false" />
+            <element signature="e#4287#4288#0" expanded="false" />
+            <element signature="e#4326#4327#0" expanded="false" />
+            <element signature="e#4361#4362#0" expanded="false" />
+            <element signature="e#4417#4418#0" expanded="false" />
+            <element signature="e#4465#4466#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2534,7 +2544,7 @@
         <state relative-caret-position="1230">
           <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2551,7 +2561,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="119" column="34" lean-forward="false" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#1199#1223#0" expanded="true" />
+            <element signature="e#4482#4506#0" expanded="true" />
+            <element signature="e#5230#5253#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2584,9 +2598,9 @@
         <state relative-caret-position="2070">
           <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2596,7 +2610,7 @@
         <state relative-caret-position="1500">
           <caret line="113" column="43" lean-forward="false" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2605,6 +2619,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
           <caret line="94" column="9" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2560#2561#0" expanded="false" />
+            <element signature="e#2584#2585#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3170#3171#0" expanded="false" />
+            <element signature="e#3310#3311#0" expanded="false" />
+            <element signature="e#3356#3357#0" expanded="false" />
+            <element signature="e#3391#3392#0" expanded="false" />
+            <element signature="e#3417#3418#0" expanded="false" />
+            <element signature="e#3453#3454#0" expanded="false" />
+            <element signature="e#3483#3484#0" expanded="false" />
+            <element signature="e#3518#3519#0" expanded="false" />
+            <element signature="e#3551#3552#0" expanded="false" />
+            <element signature="e#3600#3601#0" expanded="false" />
+            <element signature="e#3637#3638#0" expanded="false" />
+            <element signature="e#3673#3674#0" expanded="false" />
+            <element signature="e#3713#3714#0" expanded="false" />
+            <element signature="e#3745#3746#0" expanded="false" />
+            <element signature="e#3773#3774#0" expanded="false" />
+            <element signature="e#3815#3816#0" expanded="false" />
+            <element signature="e#3849#3850#0" expanded="false" />
+            <element signature="e#3880#3881#0" expanded="false" />
+            <element signature="e#3907#3908#0" expanded="false" />
+            <element signature="e#3947#3948#0" expanded="false" />
+            <element signature="e#3979#3980#0" expanded="false" />
+            <element signature="e#4015#4016#0" expanded="false" />
+            <element signature="e#4047#4048#0" expanded="false" />
+            <element signature="e#4097#4098#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
+            <element signature="e#4173#4174#0" expanded="false" />
+            <element signature="e#4203#4204#0" expanded="false" />
+            <element signature="e#4249#4250#0" expanded="false" />
+            <element signature="e#4287#4288#0" expanded="false" />
+            <element signature="e#4326#4327#0" expanded="false" />
+            <element signature="e#4361#4362#0" expanded="false" />
+            <element signature="e#4417#4418#0" expanded="false" />
+            <element signature="e#4465#4466#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2613,7 +2666,7 @@
         <state relative-caret-position="1140">
           <caret line="101" column="20" lean-forward="false" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2622,7 +2675,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="119" column="34" lean-forward="false" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#1199#1223#0" expanded="true" />
+            <element signature="e#4482#4506#0" expanded="true" />
+            <element signature="e#5230#5253#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2655,9 +2712,9 @@
         <state relative-caret-position="2070">
           <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2667,7 +2724,7 @@
         <state relative-caret-position="555">
           <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2676,6 +2733,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
           <caret line="94" column="9" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2560#2561#0" expanded="false" />
+            <element signature="e#2584#2585#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3170#3171#0" expanded="false" />
+            <element signature="e#3310#3311#0" expanded="false" />
+            <element signature="e#3356#3357#0" expanded="false" />
+            <element signature="e#3391#3392#0" expanded="false" />
+            <element signature="e#3417#3418#0" expanded="false" />
+            <element signature="e#3453#3454#0" expanded="false" />
+            <element signature="e#3483#3484#0" expanded="false" />
+            <element signature="e#3518#3519#0" expanded="false" />
+            <element signature="e#3551#3552#0" expanded="false" />
+            <element signature="e#3600#3601#0" expanded="false" />
+            <element signature="e#3637#3638#0" expanded="false" />
+            <element signature="e#3673#3674#0" expanded="false" />
+            <element signature="e#3713#3714#0" expanded="false" />
+            <element signature="e#3745#3746#0" expanded="false" />
+            <element signature="e#3773#3774#0" expanded="false" />
+            <element signature="e#3815#3816#0" expanded="false" />
+            <element signature="e#3849#3850#0" expanded="false" />
+            <element signature="e#3880#3881#0" expanded="false" />
+            <element signature="e#3907#3908#0" expanded="false" />
+            <element signature="e#3947#3948#0" expanded="false" />
+            <element signature="e#3979#3980#0" expanded="false" />
+            <element signature="e#4015#4016#0" expanded="false" />
+            <element signature="e#4047#4048#0" expanded="false" />
+            <element signature="e#4097#4098#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
+            <element signature="e#4173#4174#0" expanded="false" />
+            <element signature="e#4203#4204#0" expanded="false" />
+            <element signature="e#4249#4250#0" expanded="false" />
+            <element signature="e#4287#4288#0" expanded="false" />
+            <element signature="e#4326#4327#0" expanded="false" />
+            <element signature="e#4361#4362#0" expanded="false" />
+            <element signature="e#4417#4418#0" expanded="false" />
+            <element signature="e#4465#4466#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2684,7 +2780,7 @@
         <state relative-caret-position="630">
           <caret line="66" column="50" lean-forward="true" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2751,6 +2847,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2758,6 +2855,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#385#386#0" expanded="false" />
+            <element signature="e#412#413#0" expanded="false" />
+            <element signature="e#451#452#0" expanded="false" />
+            <element signature="e#485#486#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2773,6 +2876,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2560#2561#0" expanded="false" />
+            <element signature="e#2584#2585#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3170#3171#0" expanded="false" />
+            <element signature="e#3310#3311#0" expanded="false" />
+            <element signature="e#3356#3357#0" expanded="false" />
+            <element signature="e#3391#3392#0" expanded="false" />
+            <element signature="e#3417#3418#0" expanded="false" />
+            <element signature="e#3453#3454#0" expanded="false" />
+            <element signature="e#3483#3484#0" expanded="false" />
+            <element signature="e#3518#3519#0" expanded="false" />
+            <element signature="e#3551#3552#0" expanded="false" />
+            <element signature="e#3600#3601#0" expanded="false" />
+            <element signature="e#3637#3638#0" expanded="false" />
+            <element signature="e#3673#3674#0" expanded="false" />
+            <element signature="e#3713#3714#0" expanded="false" />
+            <element signature="e#3745#3746#0" expanded="false" />
+            <element signature="e#3773#3774#0" expanded="false" />
+            <element signature="e#3815#3816#0" expanded="false" />
+            <element signature="e#3849#3850#0" expanded="false" />
+            <element signature="e#3880#3881#0" expanded="false" />
+            <element signature="e#3907#3908#0" expanded="false" />
+            <element signature="e#3947#3948#0" expanded="false" />
+            <element signature="e#3979#3980#0" expanded="false" />
+            <element signature="e#4015#4016#0" expanded="false" />
+            <element signature="e#4047#4048#0" expanded="false" />
+            <element signature="e#4097#4098#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
+            <element signature="e#4173#4174#0" expanded="false" />
+            <element signature="e#4203#4204#0" expanded="false" />
+            <element signature="e#4249#4250#0" expanded="false" />
+            <element signature="e#4287#4288#0" expanded="false" />
+            <element signature="e#4326#4327#0" expanded="false" />
+            <element signature="e#4361#4362#0" expanded="false" />
+            <element signature="e#4417#4418#0" expanded="false" />
+            <element signature="e#4465#4466#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2781,7 +2923,7 @@
         <state relative-caret-position="1500">
           <caret line="113" column="43" lean-forward="false" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2791,9 +2933,9 @@
         <state relative-caret-position="1335">
           <caret line="105" column="43" lean-forward="false" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2806,78 +2948,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MoviesCatalog.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MoviesCatalog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="508">
+          <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-mdpi/dimens.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="96">
+          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-hdpi/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-xhdpi/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-xxhdpi/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="36" lean-forward="false" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-xxxhdpi/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
+        <state relative-caret-position="1410">
+          <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -2885,58 +2998,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="28" column="59" lean-forward="false" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/CardViewUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1370#1849#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
-            <element signature="e#1969#2134#0" expanded="true" />
-            <element signature="e#2133#2134#0" expanded="true" />
-            <element signature="e#2729#3146#0" expanded="true" />
-            <element signature="e#3145#3146#0" expanded="true" />
-            <element signature="e#3371#3787#0" expanded="true" />
-            <element signature="e#3786#3787#0" expanded="true" />
+            <element signature="e#1199#1223#0" expanded="true" />
+            <element signature="e#4482#4506#0" expanded="true" />
+            <element signature="e#5230#5253#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1193">
-          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <element signature="e#776#816#0" expanded="true" />
-            <element signature="e#2237#2257#0" expanded="true" />
-            <element signature="e#2766#2793#0" expanded="true" />
-            <element signature="e#3337#3361#0" expanded="true" />
-            <element signature="e#4364#4387#0" expanded="true" />
-            <element signature="e#5443#5466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
