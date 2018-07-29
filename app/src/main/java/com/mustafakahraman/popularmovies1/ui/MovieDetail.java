@@ -1,26 +1,36 @@
-package com.mustafakahraman.popularmovies1;
+package com.mustafakahraman.popularmovies1.ui;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mustafakahraman.popularmovies1.databinding.ActivityMovieDetailBinding;
+import com.mustafakahraman.popularmovies1.R;
+import com.mustafakahraman.popularmovies1.data.DateConverter;
 import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
+import com.mustafakahraman.popularmovies1.model.Movie;
 import com.squareup.picasso.Picasso;
 
 public class MovieDetail extends AppCompatActivity {
 
-    ActivityMovieDetailBinding mBinding;
+    //ActivityMovieDetailBinding mBinding;
 
     Movie mMovie = new Movie();
+
+    private ImageView imgPoster;
+    private TextView tvTitle, tvDate, tvPlotsynopsis;
+    private RatingBar rbVoteavg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_movie_detail);
+        setContentView(R.layout.activity_movie_detail);
+        //mBinding = DataBindingUtil.setContentView(this, R.layout.activity_movie_detail);
 
+        initializeViews();
         Intent intentOpenedMovieDetail = getIntent();
         if (intentOpenedMovieDetail == null) {
             closeOnError();
@@ -28,6 +38,14 @@ public class MovieDetail extends AppCompatActivity {
 
         setMovieDataByIntent(intentOpenedMovieDetail);
         populateUIWithMovieData();
+    }
+
+    private void initializeViews() {
+        imgPoster = (ImageView) findViewById(R.id.img_poster);
+        tvTitle = (TextView) findViewById(R.id.tv_title);
+        tvDate = (TextView) findViewById(R.id.tv_date);
+        tvPlotsynopsis = (TextView) findViewById(R.id.tv_plotsynopsis);
+        rbVoteavg = (RatingBar) findViewById(R.id.rb_voteavg);
     }
 
     // invoked when the activity may be temporarily destroyed, save the instance state here
@@ -72,13 +90,13 @@ public class MovieDetail extends AppCompatActivity {
                 .placeholder(R.drawable.poster_placeholder)
                 //.resize(R.dimens.poster_width, R.dimens.poster_height)
                 .error(R.drawable.poster_placeholder)
-                .into(mBinding.imgPoster);
+                .into(imgPoster);
         // TODO (6): Resize poster for different screen densities
 
-        mBinding.tvTitle.setText(mMovie.getTitle());
-        mBinding.tvDate.setText(mMovie.getDate());
-        mBinding.tvPlotsynopsis.setText(mMovie.getPlotSynopsis());
-        mBinding.rbVoteavg.setRating((float) mMovie.getVoteAvg());
+        tvTitle.setText(mMovie.getTitle());
+        tvDate.setText(DateConverter.toStringDate(mMovie.getDate()));
+        tvPlotsynopsis.setText(mMovie.getPlotSynopsis());
+        rbVoteavg.setRating((float) mMovie.getVoteAvg());
     }
 
     private void closeOnError() {

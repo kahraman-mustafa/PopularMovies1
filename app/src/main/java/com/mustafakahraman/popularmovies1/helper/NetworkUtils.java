@@ -2,11 +2,11 @@ package com.mustafakahraman.popularmovies1.helper;
 
 import android.content.Context;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.util.Log;
 
-import com.mustafakahraman.popularmovies1.Movie;
-import com.mustafakahraman.popularmovies1.MoviesCatalog;
+import com.mustafakahraman.popularmovies1.data.DateConverter;
+import com.mustafakahraman.popularmovies1.model.Movie;
+import com.mustafakahraman.popularmovies1.ui.MoviesCatalog;
 import com.mustafakahraman.popularmovies1.R;
 
 import org.json.JSONArray;
@@ -36,11 +36,13 @@ public class NetworkUtils {
     private static final String URL_PATH_2 = "movie";
     public static final String ORDER_BY_POPULARITY = "popular";
     public static final String ORDER_BY_TOPRATED = "top_rated";
+    public static final String ORDER_BY_FAVORITE = "favorite";
     private static final String KEY_APIKEY = "api_key";
     private static final String KEY_LANGUAGE = "language";
     private static final String KEY_PAGE = "page";
     private static final String VALUE_APIKEY = "7d6dbecae41ea70c7a804d5e54fceccc";
     private static final String VALUE_LANGUAGE_EN = "en-US";
+    private static boolean isInternetAvailable = false;
 
     public static JSONObject getHttpJSONResponse(String url) throws IOException, JSONException {
 
@@ -58,7 +60,7 @@ public class NetworkUtils {
 
     public static ArrayList<Movie> extractMoviesFromJSON(JSONObject jsonCatalog) throws JSONException {
 
-        ArrayList<Movie> moviesList = new ArrayList<Movie>();
+        ArrayList<Movie> movieList = new ArrayList<Movie>();
 
         JSONArray pageResults = jsonCatalog.getJSONArray("results");
 
@@ -74,14 +76,28 @@ public class NetworkUtils {
             Log.d("Vote Average: " + movieTitle, String.valueOf(movieVoteAvg));
             String moviePosterUrl = jsonMovie.optString("poster_path", "");
             String moviePlotSynopsis = jsonMovie.optString("overview", "Story Not Available");
+            boolean isPopular, isTopRated, isFavorite;
 
-            moviesList.add(
-                    new Movie(
-                            movieID, movieTitle, movieReleaseDate, moviePosterUrl,
-                            movieVoteAvg, moviePlotSynopsis, false));
+            if(MoviesCatalog.moviesOrderType.equals(NetworkUtils.ORDER_BY_POPULARITY)) {
+                isPopular = true;
+                isTopRated = false;
+            } else if (MoviesCatalog.moviesOrderType.equals(NetworkUtils.ORDER_BY_TOPRATED)) {
+                isPopular = false;
+                isTopRated = true;
+            } else {
+                isPopular = false;
+                isTopRated = false;
+            }
+
+            isFavorite = false;
+
+            Movie movieToInsert = new Movie(movieID, movieTitle, DateConverter.toDate(movieReleaseDate), moviePosterUrl,
+                    movieVoteAvg, moviePlotSynopsis, isFavorite, isPopular, isTopRated);
+
+            movieList.add(movieToInsert);
         }
 
-        return moviesList;
+        return movieList;
     }
 
     public static URL buildQueryUrl(String orderBy) {
@@ -111,46 +127,22 @@ public class NetworkUtils {
         return context.getString(R.string.POSTER_BASE_URL) + posterSize + posterPath;
     }
 
-    public static class InternetCheckTask extends AsyncTask<MoviesCatalog, Void, Boolean> {
-
-        private MoviesCatalog atMoviesCatalog;
-
-        @Override protected Boolean doInBackground(MoviesCatalog... moviesCatalogs) {
-            try {
-                atMoviesCatalog = moviesCatalogs[0];
-                int connectionTimeOutInMillisec = 1500;
-                Socket sock = new Socket();
-                sock.connect(new InetSocketAddress("8.8.8.8", 53), connectionTimeOutInMillisec);
-                sock.close();
-                return true;
-            } catch (IOException e) {
-                return false;
+    public static boolean getIsInternetAvailable() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    int connectionTimeOutInMillisec = 1500;
+                    Socket sock = new Socket();
+                    sock.connect(new InetSocketAddress("8.8.8.8", 53), connectionTimeOutInMillisec);
+                    sock.close();
+                    isInternetAvailable = true;
+                } catch (IOException e) {
+                    isInternetAvailable = false;
+                }
             }
-        }
-
-        @Override
-        protected void onPostExecute(Boolean isInternetAvailable) {
-            super.onPostExecute(isInternetAvailable);
-            if(isInternetAvailable) {
-                atMoviesCatalog.showMovies();
-            } else {
-                atMoviesCatalog.displayError();
-            }
-        }
+        });
+        return isInternetAvailable;
     }
 
-    /*
-    public static boolean isConnectedToNetwork(Context context) {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = null;
-        try {
-            activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-
-        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
-    }
-    */
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Number of columns to display in RecyclerView as GridLayoutManager -->
+    <integer name="grid_columns">6</integer>
+</resources>

@@ -1,23 +1,44 @@
-package com.mustafakahraman.popularmovies1;
+package com.mustafakahraman.popularmovies1.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.mustafakahraman.popularmovies1.data.DateConverter;
+
+import java.util.Date;
 
 /**
  * Created by kahraman on 17.04.2018.
  */
 
+@Entity(tableName = "movie")
 public class Movie implements Parcelable {
 
+    @PrimaryKey
     private long _id;
+    @ColumnInfo(name = "title")
     private String title;
-    private String date;
+    @ColumnInfo(name = "date")
+    private Date date;
+    @ColumnInfo(name = "poster_url")
     private String posterUrl;
+    @ColumnInfo(name = "vote_avg")
     private double voteAvg;
+    @ColumnInfo(name = "plot_synopsis")
     private String plotSynopsis;
+    @ColumnInfo(name = "is_favorite")
     private boolean isFavorite;
+    @ColumnInfo(name = "is_popular")
+    private boolean isPopular;
+    @ColumnInfo(name = "is_top_rated")
+    private boolean isTopRated;
 
-    public Movie(long _id, String title, String date, String posterUrl, double voteAvg, String plotSynopsis, boolean isFavorite) {
+    public Movie(long _id, String title, Date date, String posterUrl, double voteAvg, String plotSynopsis,
+                 boolean isFavorite, boolean isPopular, boolean isTopRated) {
         this._id = _id;
         this.title = title;
         this.date = date;
@@ -25,16 +46,21 @@ public class Movie implements Parcelable {
         this.voteAvg = voteAvg;
         this.plotSynopsis = plotSynopsis;
         this.isFavorite = isFavorite;
+        this.isPopular = isPopular;
+        this.isTopRated = isTopRated;
     }
 
+    @Ignore
     public Movie() {
         this._id = -1;
         this.title = "Title Not Available";
-        this.date = "Date Not Available";
+        this.date = null;
         this.posterUrl = "";
         this.voteAvg = 0;
         this.plotSynopsis = "Story Not Available";
         this.isFavorite = false;
+        this.isTopRated = false;
+        this.isPopular = false;
     }
 
     // This is where you write the values you want to save to the `Parcel`.
@@ -46,8 +72,10 @@ public class Movie implements Parcelable {
         out.writeLong(_id);
         out.writeDouble(voteAvg);
         out.writeInt((isFavorite ? 1 : 0));
+        out.writeInt((isPopular ? 1 : 0));
+        out.writeInt((isTopRated ? 1 : 0));
         out.writeString(title);
-        out.writeString(date);
+        out.writeString(DateConverter.toStringDate(date));
         out.writeString(posterUrl);
         out.writeString(plotSynopsis);
         // out.writeParcelable(mInfo, flags);
@@ -60,8 +88,10 @@ public class Movie implements Parcelable {
         _id = in.readLong();
         voteAvg = in.readDouble();
         isFavorite = in.readInt() != 0;
+        isPopular = in.readInt() != 0;
+        isTopRated = in.readInt() != 0;
         title = in.readString();
-        date = in.readString();
+        date = DateConverter.toDate(in.readString());
         posterUrl = in.readString();
         plotSynopsis = in.readString();
         //mInfo = in.readParcelable(MySubParcelable.class.getClassLoader());
@@ -111,6 +141,22 @@ public class Movie implements Parcelable {
         isFavorite = favorite;
     }
 
+    public boolean isPopular() {
+        return isPopular;
+    }
+
+    public void setPopular(boolean popular) {
+        isPopular = popular;
+    }
+
+    public boolean isTopRated() {
+        return isTopRated;
+    }
+
+    public void setTopRated(boolean topRated) {
+        isTopRated = topRated;
+    }
+
     public void toggleFavorite() {
         isFavorite = !isFavorite;
     }
@@ -123,11 +169,11 @@ public class Movie implements Parcelable {
         this.title = title;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -160,11 +206,13 @@ public class Movie implements Parcelable {
         return "Movie{" +
                 "_id=" + _id +
                 ", title='" + title + '\'' +
-                ", date='" + date + '\'' +
+                ", date='" + DateConverter.toStringDate(date) + '\'' +
                 ", posterUrl='" + posterUrl + '\'' +
                 ", voteAvg=" + voteAvg +
                 ", plotSynopsis='" + plotSynopsis + '\'' +
-                ", isFavorite=" + isFavorite +
+                ", isFavorite=" + isFavorite + '\'' +
+                ", isPopular=" + isPopular + '\'' +
+                ", isTopRated=" + isTopRated +
                 '}';
     }
 }

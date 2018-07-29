@@ -8,10 +8,11 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import static com.mustafakahraman.popularmovies1.helper.ConnectionModel.MobileData;
-import static com.mustafakahraman.popularmovies1.helper.ConnectionModel.WifiData;
+import static com.mustafakahraman.popularmovies1.helper.Connection.MobileData;
+import static com.mustafakahraman.popularmovies1.helper.Connection.NoData;
+import static com.mustafakahraman.popularmovies1.helper.Connection.WifiData;
 
-public class ConnectionLiveData extends LiveData<ConnectionModel> {
+public class ConnectionLiveData extends LiveData<Connection> {
 
     private Context context;
 
@@ -41,16 +42,27 @@ public class ConnectionLiveData extends LiveData<ConnectionModel> {
                 boolean isConnected = activeNetwork != null &&
                         activeNetwork.isConnectedOrConnecting();
                 if(isConnected) {
+
+                    boolean isInternetAvailable = NetworkUtils.getIsInternetAvailable();
+
                     switch (activeNetwork.getType()){
                         case ConnectivityManager.TYPE_WIFI:
-                            postValue(new ConnectionModel(WifiData,true));
+                            if(isInternetAvailable) {
+                                postValue(new Connection(WifiData, true, true));
+                            } else {
+                                postValue(new Connection(WifiData, true, false));
+                            }
                             break;
                         case ConnectivityManager.TYPE_MOBILE:
-                            postValue(new ConnectionModel(MobileData,true));
+                            if(isInternetAvailable) {
+                                postValue(new Connection(MobileData, true, true));
+                            } else {
+                                postValue(new Connection(MobileData, true, false));
+                            }
                             break;
                     }
                 } else {
-                    postValue(new ConnectionModel(0,false));
+                    postValue(new Connection(NoData,false, false));
                 }
             }
         }

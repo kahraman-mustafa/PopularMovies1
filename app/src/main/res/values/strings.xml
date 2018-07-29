@@ -23,12 +23,16 @@
 
     <!-- Catalog Activity -->
     <string name="error_message">Failed to get results, please try again.</string>
+    <string name="error_none_toprated">Failed to show top rated movies</string>
+    <string name="error_none_popular">Failed to show popular movies</string>
+    <string name="error_none_favorite">You have no favorite movie yet.</string>
     <string name="img_thumb_content_description">Movie Poster Thumbnail</string>
     <string name="img_star_content_description">Movie Favorite Star</string>
 
     <!-- Menu -->
     <string name="menu_title_popular">Popular Movies</string>
     <string name="menu_title_toprated">Top Rated Movies</string>
+    <string name="menu_title_favorite">Favorite Movies</string>
 
     <!-- Detail Activity-->
     <string name="detail_also_known_as_label">Also known as:</string>
