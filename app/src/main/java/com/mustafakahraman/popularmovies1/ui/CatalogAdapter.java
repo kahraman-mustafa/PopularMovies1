@@ -20,6 +20,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by kahraman on 14.04.2018.
  */
@@ -30,6 +33,9 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
     private ItemClickListener mClickListener;
     private Context mContext;
 
+    private int selectedPos = RecyclerView.NO_POSITION;
+    MoviesViewModel moviesViewModel;
+    private String mOrderType;
 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
@@ -41,27 +47,12 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
         this.mClickListener = itemClickListener;
     }
 
-    public CatalogAdapter(Context context, ArrayList<Movie> movies) {
+    public CatalogAdapter(Context context, MoviesViewModel moviesViewModel, ArrayList<Movie> movies, String moviesOrderType) {
         mContext = context;
         this.mMovieList = movies;
+        this.moviesViewModel = moviesViewModel;
+        mOrderType = moviesOrderType;
     }
-
-    /*@NonNull
-    @Override
-    public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        boolean shouldAttachToParentImmediately = false;
-
-        if (layoutInflater == null) {
-            layoutInflater = LayoutInflater.from(parent.getContext());
-        }
-
-        ItemCatalogBinding itemCatalogBinding =
-                DataBindingUtil.inflate(layoutInflater, R.layout.item_catalog, parent, shouldAttachToParentImmediately);
-
-        return new MovieViewHolder(itemCatalogBinding);
-    }*/
 
     @NonNull
     @Override
@@ -70,7 +61,7 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
         // Inflate the task_layout to a view
-        View view = layoutInflater.inflate(R.layout.item_catalog, parent, shouldAttachToParentImmediately);
+        View view = layoutInflater.inflate(R.layout.movie_catalog_item, parent, shouldAttachToParentImmediately);
 
         return new MovieViewHolder(view);
     }
@@ -78,6 +69,7 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
+        holder.itemView.setSelected(selectedPos == position);
         holder.bind(position);
     }
 
@@ -87,7 +79,24 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
     }
 
     public Movie getItemAtPosition(int position) {
-        return mMovieList.get(position);
+        Movie movie = mMovieList.get(position);
+        if(moviesViewModel.getFavoriteMovies() != null) {
+            try {
+                // check if current item id is in the favoriteId list or not and
+                // according to it, show its star as enabled or disabled in catalog view
+                if (moviesViewModel.getFavoriteMovieIds().getValue().contains(movie.get_id())) {
+                    movie.setFavorite(true);
+                } else {
+                    movie.setFavorite(false);
+                }
+            } catch (NullPointerException e) {
+                movie.setFavorite(false);
+                e.printStackTrace();
+            }
+        } else {
+            movie.setFavorite(false);
+        }
+        return movie;
     }
 
     /**
@@ -99,45 +108,29 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
         notifyDataSetChanged();
     }
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        //private final ItemCatalogBinding mBinding;
-
-        TextView tvTitleItem, tvDateItem, tvErrorMessageItem;
-        ImageView imgThumbnail, imgFavorite;
-        LinearLayout llayItem;
-        ProgressBar pbLoadingBarItem;
-
-        /*public MovieViewHolder(final ItemCatalogBinding itemCatalogBinding) {
-            super(itemCatalogBinding.getRoot());
-
-            mBinding = itemCatalogBinding;
-            itemCatalog.setOnClickListener(this);
-
-            displayItemLoading();
-        }*/
+        @BindView(R.id.tv_title_item) TextView tvTitleItem;
+        @BindView(R.id.tv_date_item) TextView tvDateItem;
+        @BindView(R.id.tv_error_message_item) TextView tvErrorMessageItem;
+        @BindView(R.id.img_poster_item) ImageView imgThumbnail;
+        @BindView(R.id.img_favorite_item) ImageView imgFavorite;
+        @BindView(R.id.llay_item) LinearLayout llayItem;
+        @BindView(R.id.pb_loading_bar_item) ProgressBar pbLoadingBarItem;
         
         public MovieViewHolder(View itemView) {
             super(itemView);
-            
-            initializeItemViews(itemView);
+            ButterKnife.bind(this, itemView);
+
             itemView.setOnClickListener(this);
 
             displayItemLoading();
         }
-        
-        private void initializeItemViews(View itemView) {
-            tvTitleItem = (TextView) itemView.findViewById(R.id.tv_title_item);
-            tvDateItem = (TextView) itemView.findViewById(R.id.tv_date_item);
-            tvErrorMessageItem = (TextView) itemView.findViewById(R.id.tv_error_message_item);
-            imgThumbnail = (ImageView) itemView.findViewById(R.id.img_thumbnail);
-            imgFavorite = (ImageView) itemView.findViewById(R.id.img_favorite);
-            llayItem = (LinearLayout) itemView.findViewById(R.id.llay_item);
-            pbLoadingBarItem = (ProgressBar) itemView.findViewById(R.id.pb_loading_bar_item);
-        }
 
         void bind(int gridItemIndex) {
-            Movie movie = mMovieList.get(gridItemIndex);
+            final Movie movie = mMovieList.get(gridItemIndex);
+
+
 
             tvTitleItem.setText(movie.getTitle());
             String dateAndVoteAvg = movie.getVoteAvg() + "/10"
@@ -150,8 +143,34 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
                             mContext.getString(R.string.POSTER_SIZE_W185),
                             movie.getPosterUrl()))
                     .into(imgThumbnail);
-            imgFavorite.setImageResource(
-                    movie.isFavorite() ? R.drawable.star_enabled : R.drawable.star_disabled);
+
+
+            // get movie id to check whether it is the favoriteId arraylist in movieViewModel or not
+            // if so show its star image as enabled, if not as disabled
+            long itemMovieId = movie.get_id();
+
+            if(moviesViewModel.getFavoriteMovies() != null) {
+                try {
+                    // check if current item id is in the favoriteId list or not and
+                    // according to it, show its star as enabled or disabled in catalog view
+                    if (moviesViewModel.getFavoriteMovieIds().getValue().contains(itemMovieId)) {
+                        imgFavorite.setImageResource(R.drawable.star_enabled);
+                    } else {
+                        imgFavorite.setImageResource(R.drawable.star_disabled);
+                    }
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                    imgFavorite.setImageResource(R.drawable.star_disabled);
+                }
+            } else {
+                imgFavorite.setImageResource(R.drawable.star_disabled);
+            }
+
+            /*if (movie.isFavorite()) {
+                imgFavorite.setImageResource(R.drawable.star_enabled);
+            } else {
+                imgFavorite.setImageResource(R.drawable.star_disabled);
+            }*/
 
             if(movie.get_id() < 0) {
                 displayItemError();
@@ -163,6 +182,10 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
+
+            notifyItemChanged(selectedPos);
+            selectedPos = getLayoutPosition();
+            notifyItemChanged(selectedPos);
 
             if (mClickListener != null) mClickListener.onItemClick(position);
         }

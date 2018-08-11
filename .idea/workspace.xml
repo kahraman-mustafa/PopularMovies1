@@ -6,11 +6,24 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="D/" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="717922ba-b0f9-409a-96bd-f318a9c38ea1" name="Default" comment="">
+    <list default="true" id="1838eb0b-3070-4ed4-bd3e-65b9203e4efa" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_8_8_1_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_timber_timber_4_7_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_16_0_1_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/SortingOrderModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp-land/movie_catalog_activity.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_activity.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_fragment.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_item.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_detail_activity.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/resourceHashesCache.bin" />
@@ -18,36 +31,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_adapters_3_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_baseLibrary_3_1_2_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_library_3_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_0_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_4_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_8_4_0_jar.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/CatalogAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/Movie.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MovieDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MoviesCatalog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionLiveData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionLiveData.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ItemOffsetDecoration.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ItemOffsetDecoration.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_catalog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_catalog.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogViewModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesViewModel.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/SortingOrderModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,24 +71,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CatalogViewModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogViewModel.java">
+      <file leaf-file-name="MoviesCatalogFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="284">
+              <caret line="203" column="116" lean-forward="false" selection-start-line="203" selection-start-column="116" selection-end-line="203" selection-end-column="116" />
               <folding>
-                <element signature="e#1158#1519#0" expanded="true" />
-                <element signature="e#1518#1519#0" expanded="true" />
+                <element signature="e#3435#3436#0" expanded="true" />
+                <element signature="e#3474#3475#0" expanded="true" />
+                <element signature="e#13518#13675#0" expanded="true" />
+                <element signature="e#13674#13675#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java">
+      <file leaf-file-name="movie_catalog_activity.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_activity.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="0">
+              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieDetailFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1624">
+              <caret line="194" column="53" lean-forward="false" selection-start-line="194" selection-start-column="53" selection-end-line="194" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movie_catalog_item.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="127" column="9" lean-forward="true" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
+              <folding>
+                <element signature="e#971#978#0" expanded="true" />
+                <element signature="method#getItemAtPosition#0;class#CatalogAdapter#0" expanded="false" />
+                <element signature="e#5027#5072#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -97,101 +149,38 @@
       <file leaf-file-name="MoviesCatalog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="244" column="44" lean-forward="false" selection-start-line="244" selection-start-column="44" selection-end-line="244" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2441#3897#0" expanded="true" />
-                <element signature="e#3896#3897#0" expanded="true" />
-                <element signature="e#4607#4656#0" expanded="true" />
-                <element signature="e#4841#4898#0" expanded="true" />
-                <element signature="e#5498#6368#0" expanded="true" />
-                <element signature="e#6205#6232#0" expanded="true" />
-                <element signature="e#6367#6368#0" expanded="true" />
-                <element signature="e#6424#7288#0" expanded="true" />
-                <element signature="e#7124#7152#0" expanded="true" />
-                <element signature="e#7287#7288#0" expanded="true" />
-                <element signature="e#7344#8215#0" expanded="true" />
-                <element signature="e#8051#8079#0" expanded="true" />
-                <element signature="e#8214#8215#0" expanded="true" />
-                <element signature="e#9174#9202#0" expanded="true" />
-                <element signature="e#9410#9438#0" expanded="true" />
-                <element signature="e#11727#12816#0" expanded="true" />
-                <element signature="e#12815#12816#0" expanded="true" />
-                <element signature="e#12928#12950#0" expanded="true" />
-                <element signature="e#15012#15048#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkUtils.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="movie_detail_fragment.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NetworkUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_movie_catalog.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovieDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            <state relative-caret-position="300">
+              <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2080#2087#0" expanded="true" />
+                <element signature="e#4541#4584#0" expanded="true" />
+                <element signature="e#4724#5240#0" expanded="true" />
+                <element signature="e#5239#5240#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CatalogAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-870">
-              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_catalog.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -200,16 +189,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="valueResourceFile" />
-        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mBinding.</find>
+      <find>Log.d(LOG_TAG,</find>
+      <find>Log.d(TAG,</find>
+      <find>fr_movie_detai</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Timber.d(</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2225,48 +2217,38 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/Movie.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/InternetViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MovieDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/CatalogAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/MoviesCatalog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/integers.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/BorderlessItemDecoration.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ItemOffsetDecoration.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-land/integers.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/AppExecutors.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/DateConverter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/AddMovieViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/AddMovieViewModelFactory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_catalog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/SortingOrderModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/AppDatabase.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionLiveData.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movies_catalog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_movie_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_movie_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_movie_catalog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/SortingOrderModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_movie_catalog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/SortingOrderModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp-land/movie_catalog_activity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="547" />
     <option name="y" value="23" />
-    <option name="width" value="1593" />
-    <option name="height" value="1126" />
+    <option name="width" value="995" />
+    <option name="height" value="1127" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2284,7 +2266,6 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
@@ -2300,9 +2281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -2314,7 +2292,52 @@
             <path>
               <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="popularmovies1" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="popularmovies1" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="popularmovies1" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="popularmovies1" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="popularmovies1" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
@@ -2326,8 +2349,7 @@
               <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="activity_movie_detail" type="c431d0b8:AndroidResGroupNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="PopularMovies1" type="1abcf292:AndroidViewProjectNode" />
@@ -2337,14 +2359,17 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1532815279727" />
-    <property name="device.picker.selection" value="Nexus_5X_API_27_x86" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1534011702862" />
+    <property name="device.picker.selection" value="4df115902c949f59" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2517,16 +2542,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="717922ba-b0f9-409a-96bd-f318a9c38ea1" name="Default" comment="" />
-      <created>1532173256289</created>
+      <changelist id="1838eb0b-3070-4ed4-bd3e-65b9203e4efa" name="Default" comment="" />
+      <created>1533323863258</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1532173256289</updated>
+      <updated>1533323863258</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1593" height="1126" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1127" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2535,65 +2560,32 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5042598" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41393444" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945737" sideWeight="0.49574015" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18375242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26996806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15600775" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294903" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3986421" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2112403" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="100" y="123" width="1183" height="927" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="330" y="123" width="1490" height="927" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46311477" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989071" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="123" width="1183" height="927" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20386267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -2602,340 +2594,81 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>99</line>
-          <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>134</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>208</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>210</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>212</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>229</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>236</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>237</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>242</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>56</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>244</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>252</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>251</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>265</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>268</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>102</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>275</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java</url>
+          <line>107</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>276</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>277</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>280</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>281</line>
-          <properties />
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>139</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>142</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>145</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>155</line>
-          <properties />
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>176</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>175</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>178</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>162</line>
-          <properties />
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>181</line>
-          <properties />
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>159</line>
-          <properties />
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>221</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java</url>
-          <line>136</line>
-          <properties method="onChanged">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="77" />
+      <option name="time" value="40" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="curFav" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="46" column="90" lean-forward="false" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
+        <state relative-caret-position="5295">
+          <caret line="390" column="0" lean-forward="false" selection-start-line="390" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2441#3897#0" expanded="true" />
-            <element signature="e#3896#3897#0" expanded="true" />
-            <element signature="e#4607#4656#0" expanded="true" />
-            <element signature="e#4841#4898#0" expanded="true" />
-            <element signature="e#5498#6368#0" expanded="true" />
-            <element signature="e#6205#6232#0" expanded="true" />
-            <element signature="e#6367#6368#0" expanded="true" />
-            <element signature="e#6424#7288#0" expanded="true" />
-            <element signature="e#7124#7152#0" expanded="true" />
-            <element signature="e#7287#7288#0" expanded="true" />
-            <element signature="e#7344#8215#0" expanded="true" />
-            <element signature="e#8051#8079#0" expanded="true" />
-            <element signature="e#8214#8215#0" expanded="true" />
-            <element signature="e#9174#9202#0" expanded="true" />
-            <element signature="e#9410#9438#0" expanded="true" />
-            <element signature="e#11727#12816#0" expanded="true" />
-            <element signature="e#12815#12816#0" expanded="true" />
-            <element signature="e#12928#12950#0" expanded="true" />
-            <element signature="e#15012#15048#0" expanded="true" />
+            <element signature="e#3435#3436#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#13518#13675#0" expanded="true" />
+            <element signature="e#13674#13675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_activity.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="67" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2944,377 +2677,421 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp-land/movie_catalog_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="81" column="60" lean-forward="false" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3435#3436#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#13518#13675#0" expanded="true" />
+            <element signature="e#13674#13675#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3435#3436#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#13518#13675#0" expanded="true" />
+            <element signature="e#13674#13675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3435#3436#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#13518#13675#0" expanded="true" />
+            <element signature="e#13674#13675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_movie_catalog.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="66" lean-forward="false" selection-start-line="3" selection-start-column="66" selection-end-line="3" selection-end-column="66" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/InternetViewModel.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/27.1.1/ad225a74247e675db0b05ea4f8b17202acbb7f9d/recyclerview-v7-27.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10791" column="0" lean-forward="false" selection-start-line="10791" selection-start-column="0" selection-end-line="10791" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ItemOffsetDecoration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        <state relative-caret-position="600">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="60" column="34" lean-forward="false" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        <state relative-caret-position="-1018">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="491">
+          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="480">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="55" lean-forward="true" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/mustafakahraman/popularmovies1/MovieDetail_ViewBinding.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="67" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/integers.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/SortingOrderModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/BorderlessItemDecoration.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/27.1.1/ad225a74247e675db0b05ea4f8b17202acbb7f9d/recyclerview-v7-27.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="4792" column="0" lean-forward="false" selection-start-line="4792" selection-start-column="0" selection-end-line="4792" selection-end-column="0" />
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ItemOffsetDecoration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-land/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/DateConverter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_movie_catalog.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/AppExecutors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_catalog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/AppDatabase.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp-land/movie_catalog_activity.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        <state relative-caret-position="360">
+          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/SortingOrderModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        <state relative-caret-position="1624">
+          <caret line="194" column="53" lean-forward="false" selection-start-line="194" selection-start-column="53" selection-end-line="194" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="85" lean-forward="false" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
+        <state relative-caret-position="284">
+          <caret line="203" column="116" lean-forward="false" selection-start-line="203" selection-start-column="116" selection-end-line="203" selection-end-column="116" />
           <folding>
-            <element signature="e#759#760#0" expanded="false" />
-            <element signature="e#793#794#0" expanded="false" />
-            <element signature="e#821#822#0" expanded="false" />
-            <element signature="e#848#849#0" expanded="false" />
-            <element signature="e#895#896#0" expanded="false" />
-            <element signature="e#937#938#0" expanded="false" />
+            <element signature="e#3435#3436#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#13518#13675#0" expanded="true" />
+            <element signature="e#13674#13675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionLiveData.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/livedata-core/1.1.1/c38818e006ea7a408c05e3090364332d46494ef/livedata-core-1.1.1-sources.jar!/android/arch/lifecycle/LiveData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="58" column="22" lean-forward="false" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        <state relative-caret-position="574">
+          <caret line="127" column="9" lean-forward="true" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
+          <folding>
+            <element signature="e#971#978#0" expanded="true" />
+            <element signature="method#getItemAtPosition#0;class#CatalogAdapter#0" expanded="false" />
+            <element signature="e#5027#5072#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="66" lean-forward="false" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/mustafakahraman/popularmovies1/data/MovieDao_Impl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/AddMovieViewModel.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/AddMovieViewModelFactory.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-19/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="5451" column="0" lean-forward="false" selection-start-line="5451" selection-start-column="0" selection-end-line="5451" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="e#1158#1519#0" expanded="true" />
-            <element signature="e#1518#1519#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7008" column="0" lean-forward="false" selection-start-line="7008" selection-start-column="0" selection-end-line="7008" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-870">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2080#2087#0" expanded="true" />
+            <element signature="e#4541#4584#0" expanded="true" />
+            <element signature="e#4724#5240#0" expanded="true" />
+            <element signature="e#5239#5240#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="244" column="44" lean-forward="false" selection-start-line="244" selection-start-column="44" selection-end-line="244" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2441#3897#0" expanded="true" />
-            <element signature="e#3896#3897#0" expanded="true" />
-            <element signature="e#4607#4656#0" expanded="true" />
-            <element signature="e#4841#4898#0" expanded="true" />
-            <element signature="e#5498#6368#0" expanded="true" />
-            <element signature="e#6205#6232#0" expanded="true" />
-            <element signature="e#6367#6368#0" expanded="true" />
-            <element signature="e#6424#7288#0" expanded="true" />
-            <element signature="e#7124#7152#0" expanded="true" />
-            <element signature="e#7287#7288#0" expanded="true" />
-            <element signature="e#7344#8215#0" expanded="true" />
-            <element signature="e#8051#8079#0" expanded="true" />
-            <element signature="e#8214#8215#0" expanded="true" />
-            <element signature="e#9174#9202#0" expanded="true" />
-            <element signature="e#9410#9438#0" expanded="true" />
-            <element signature="e#11727#12816#0" expanded="true" />
-            <element signature="e#12815#12816#0" expanded="true" />
-            <element signature="e#12928#12950#0" expanded="true" />
-            <element signature="e#15012#15048#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
   </component>

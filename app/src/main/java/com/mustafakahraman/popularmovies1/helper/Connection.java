@@ -10,14 +10,10 @@ public class Connection {
     public static final int MobileData = 2;
 
     private boolean isConnected;
-    private boolean isInternetAvailable;
 
-    public Connection(int type, boolean isConnected, boolean isInternetAvailable) {
+    public Connection(int type, boolean isConnected) {
         this.type = type;
         this.isConnected = isConnected;
-        this.isInternetAvailable = isInternetAvailable;
-        Log.d("Connection", "Connection object created - isConnected: " + isConnected + ", " +
-                "\nisInternetAvailable: " + isInternetAvailable + ", type: " + type);
     }
 
     public boolean getIsConnected() {
@@ -26,9 +22,5 @@ public class Connection {
 
     public int getType() {
         return type;
-    }
-
-    public boolean getIsInternetAvailable() {
-        return isInternetAvailable;
     }
 }

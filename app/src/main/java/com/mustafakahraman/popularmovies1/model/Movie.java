@@ -32,13 +32,9 @@ public class Movie implements Parcelable {
     private String plotSynopsis;
     @ColumnInfo(name = "is_favorite")
     private boolean isFavorite;
-    @ColumnInfo(name = "is_popular")
-    private boolean isPopular;
-    @ColumnInfo(name = "is_top_rated")
-    private boolean isTopRated;
 
     public Movie(long _id, String title, Date date, String posterUrl, double voteAvg, String plotSynopsis,
-                 boolean isFavorite, boolean isPopular, boolean isTopRated) {
+                 boolean isFavorite) {
         this._id = _id;
         this.title = title;
         this.date = date;
@@ -46,8 +42,6 @@ public class Movie implements Parcelable {
         this.voteAvg = voteAvg;
         this.plotSynopsis = plotSynopsis;
         this.isFavorite = isFavorite;
-        this.isPopular = isPopular;
-        this.isTopRated = isTopRated;
     }
 
     @Ignore
@@ -59,8 +53,6 @@ public class Movie implements Parcelable {
         this.voteAvg = 0;
         this.plotSynopsis = "Story Not Available";
         this.isFavorite = false;
-        this.isTopRated = false;
-        this.isPopular = false;
     }
 
     // This is where you write the values you want to save to the `Parcel`.
@@ -72,8 +64,6 @@ public class Movie implements Parcelable {
         out.writeLong(_id);
         out.writeDouble(voteAvg);
         out.writeInt((isFavorite ? 1 : 0));
-        out.writeInt((isPopular ? 1 : 0));
-        out.writeInt((isTopRated ? 1 : 0));
         out.writeString(title);
         out.writeString(DateConverter.toStringDate(date));
         out.writeString(posterUrl);
@@ -88,8 +78,6 @@ public class Movie implements Parcelable {
         _id = in.readLong();
         voteAvg = in.readDouble();
         isFavorite = in.readInt() != 0;
-        isPopular = in.readInt() != 0;
-        isTopRated = in.readInt() != 0;
         title = in.readString();
         date = DateConverter.toDate(in.readString());
         posterUrl = in.readString();
@@ -139,22 +127,6 @@ public class Movie implements Parcelable {
 
     public void setFavorite(boolean favorite) {
         isFavorite = favorite;
-    }
-
-    public boolean isPopular() {
-        return isPopular;
-    }
-
-    public void setPopular(boolean popular) {
-        isPopular = popular;
-    }
-
-    public boolean isTopRated() {
-        return isTopRated;
-    }
-
-    public void setTopRated(boolean topRated) {
-        isTopRated = topRated;
     }
 
     public void toggleFavorite() {
@@ -210,9 +182,7 @@ public class Movie implements Parcelable {
                 ", posterUrl='" + posterUrl + '\'' +
                 ", voteAvg=" + voteAvg +
                 ", plotSynopsis='" + plotSynopsis + '\'' +
-                ", isFavorite=" + isFavorite + '\'' +
-                ", isPopular=" + isPopular + '\'' +
-                ", isTopRated=" + isTopRated +
+                ", isFavorite=" + isFavorite +
                 '}';
     }
 }

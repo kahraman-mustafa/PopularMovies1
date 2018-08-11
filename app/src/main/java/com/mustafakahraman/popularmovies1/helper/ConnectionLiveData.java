@@ -1,6 +1,7 @@
 package com.mustafakahraman.popularmovies1.helper;
 
 import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,11 +9,15 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+
 import static com.mustafakahraman.popularmovies1.helper.Connection.MobileData;
 import static com.mustafakahraman.popularmovies1.helper.Connection.NoData;
 import static com.mustafakahraman.popularmovies1.helper.Connection.WifiData;
 
-public class ConnectionLiveData extends LiveData<Connection> {
+public class ConnectionLiveData extends MutableLiveData<Connection> {
 
     private Context context;
 
@@ -42,27 +47,18 @@ public class ConnectionLiveData extends LiveData<Connection> {
                 boolean isConnected = activeNetwork != null &&
                         activeNetwork.isConnectedOrConnecting();
                 if(isConnected) {
-
-                    boolean isInternetAvailable = NetworkUtils.getIsInternetAvailable();
-
                     switch (activeNetwork.getType()){
                         case ConnectivityManager.TYPE_WIFI:
-                            if(isInternetAvailable) {
-                                postValue(new Connection(WifiData, true, true));
-                            } else {
-                                postValue(new Connection(WifiData, true, false));
-                            }
+                            postValue(new Connection(WifiData, true));
                             break;
                         case ConnectivityManager.TYPE_MOBILE:
-                            if(isInternetAvailable) {
-                                postValue(new Connection(MobileData, true, true));
-                            } else {
-                                postValue(new Connection(MobileData, true, false));
-                            }
+                            postValue(new Connection(MobileData, true));
                             break;
+                        default:
+                            postValue(new Connection(NoData, true));
                     }
                 } else {
-                    postValue(new Connection(NoData,false, false));
+                    postValue(new Connection(NoData,false));
                 }
             }
         }

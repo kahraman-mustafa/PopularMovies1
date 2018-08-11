@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.mustafakahraman.popularmovies1.ui.MovieDetail">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:minHeight="480dp">
 
-        <ImageView
-            android:id="@+id/img_poster"
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_hor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <FrameLayout
+            android:id="@+id/fl_poster_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
             android:padding="8dp"
-            android:contentDescription="@string/img_poster_content_description"
             app:layout_constraintBottom_toTopOf="@+id/guideline_hor"
             app:layout_constraintEnd_toStartOf="@+id/guideline_ver"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/poster_placeholder" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/img_poster_content_description"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/poster_placeholder" />
+
+            <ImageView
+                android:id="@+id/img_favorite"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="@string/img_star_content_description"
+                android:src="@drawable/star_disabled" />
+
+        </FrameLayout>
 
         <RatingBar
             android:id="@+id/rb_voteavg"
@@ -36,9 +66,9 @@
             android:max="10"
             android:numStars="10"
             android:stepSize="0.1"
-            app:layout_constraintBottom_toBottomOf="@+id/img_poster"
+            app:layout_constraintBottom_toBottomOf="@+id/fl_poster_container"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_poster"
+            app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 
         <TextView
@@ -54,7 +84,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/img_poster" />
+            app:layout_constraintStart_toEndOf="@+id/fl_poster_container" />
 
         <TextView
             android:id="@+id/tv_date"
@@ -65,25 +95,25 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/text_release_date"
-            app:layout_constraintBottom_toBottomOf="@+id/img_poster"
+            app:layout_constraintBottom_toBottomOf="@+id/fl_poster_container"
             app:layout_constraintEnd_toEndOf="@+id/tv_title"
             app:layout_constraintStart_toStartOf="@+id/tv_title"
-            app:layout_constraintTop_toTopOf="@+id/img_poster" />
+            app:layout_constraintTop_toTopOf="@+id/fl_poster_container" />
 
         <TextView
             android:id="@+id/tv_label_plotsynopsis"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:padding="8dp"
             android:gravity="center_horizontal"
+            android:padding="8dp"
             android:text="@string/label_overview"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_poster" />
+            app:layout_constraintTop_toBottomOf="@+id/fl_poster_container" />
 
-        <ScrollView
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
@@ -100,25 +130,8 @@
                 android:gravity="start"
                 android:text="@string/text_overview" />
 
-        </ScrollView>
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline_ver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline_hor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+        </android.support.v4.widget.NestedScrollView>
 
     </android.support.constraint.ConstraintLayout>
 
-</layout>
-
-    <!-- COMPLETED (3): Wrap layout by ScrollView  -->
-    <!-- COMPLETED (4): Add layout for landscape mode -->
+</ScrollView>

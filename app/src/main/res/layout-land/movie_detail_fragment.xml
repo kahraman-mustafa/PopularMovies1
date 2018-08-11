@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.mustafakahraman.popularmovies1.ui.MovieDetail">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:minHeight="400dp">
 
-        <ImageView
-            android:id="@+id/img_poster"
+        <FrameLayout
+            android:id="@+id/fl_poster_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
             android:layout_marginBottom="8dp"
-            android:contentDescription="@string/img_poster_content_description"
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline_ver"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/poster_placeholder" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/img_poster_content_description"
+                app:srcCompat="@drawable/poster_placeholder" />
+
+            <ImageView
+                android:id="@+id/img_favorite"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="@string/img_star_content_description"
+                android:src="@drawable/star_disabled" />
+
+        </FrameLayout>
 
         <RatingBar
             android:id="@+id/rb_voteavg"
@@ -51,8 +68,8 @@
             android:gravity="start|center_vertical"
             android:text="@string/text_title"
             android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/img_poster"
-            app:layout_constraintTop_toTopOf="@+id/img_poster" />
+            app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
+            app:layout_constraintTop_toTopOf="@+id/fl_poster_container" />
 
         <TextView
             android:id="@+id/tv_date"
@@ -65,7 +82,7 @@
             android:text="@string/text_release_date"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline_hor"
-            app:layout_constraintStart_toEndOf="@+id/img_poster"
+            app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <TextView
@@ -78,7 +95,7 @@
             android:text="@string/label_overview"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_poster"
+            app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/guideline_hor" />
 
         <ScrollView
@@ -90,7 +107,7 @@
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_poster"
+            app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/tv_label_plotsynopsis">
 
             <TextView
@@ -118,4 +135,4 @@
 
     </android.support.constraint.ConstraintLayout>
 
-</layout>
+</ScrollView>

@@ -3,6 +3,7 @@
 
     <string name="INTENT_KEY_MOVIE">movie_data</string>
     <string name="INTENT_KEY_MOVIE_CATALOG">movie_catalog_data</string>
+    <string name="INTENT_KEY_VIEWMODEL">view_model</string>
     <!--
     <string name="INTENT_KEY_ID">id</string>
     <string name="INTENT_KEY_TITLE">title</string>

@@ -40,7 +40,7 @@ public class NetworkUtils {
     private static final String KEY_APIKEY = "api_key";
     private static final String KEY_LANGUAGE = "language";
     private static final String KEY_PAGE = "page";
-    private static final String VALUE_APIKEY = "7d6dbecae41ea70c7a804d5e54fceccc";
+    private static final String VALUE_APIKEY = "YOUR_API_KEY_HERE";
     private static final String VALUE_LANGUAGE_EN = "en-US";
     private static boolean isInternetAvailable = false;
 

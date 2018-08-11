@@ -19,8 +19,14 @@ public interface MovieDao {
     @Query("SELECT * FROM movie WHERE is_favorite = 1 ORDER BY vote_avg")
     LiveData<List<Movie>> loadFavoriteMovies();
 
+    @Query("SELECT _id FROM movie WHERE is_favorite = 1")
+    LiveData<List<Long>> getFavoriteMovieIds();
+
     @Query("SELECT COUNT(*) FROM movie WHERE is_favorite = 1")
     long getNumberOfSavedFavoriteMovies();
+
+    @Query("SELECT COUNT(*) FROM movie WHERE is_favorite = 1 AND _id=:id")
+    long getIsMovieFavorite(long id);
 
     /*@Query("SELECT * FROM movie WHERE is_popular = 1")
     LiveData<List<Movie>> loadPopularMovies();
