@@ -51,12 +51,12 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:isIndicator="true"
-            android:max="10"
             android:numStars="10"
-            android:stepSize="0.1"
+            android:stepSize="0.25"
             app:layout_constraintBottom_toBottomOf="@+id/tv_date"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_date"
             app:layout_constraintTop_toTopOf="@+id/tv_date" />
 
         <TextView

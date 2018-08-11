@@ -73,7 +73,6 @@ public class NetworkUtils {
             String movieTitle = jsonMovie.optString("title", "Title Not Available");
             String movieReleaseDate = jsonMovie.optString("release_date", "Date Not Available");
             double movieVoteAvg = jsonMovie.optDouble("vote_average", 0);
-            Log.d("Vote Average: " + movieTitle, String.valueOf(movieVoteAvg));
             String moviePosterUrl = jsonMovie.optString("poster_path", "");
             String moviePlotSynopsis = jsonMovie.optString("overview", "Story Not Available");
             boolean isFavorite = favIdList.contains(movieID);

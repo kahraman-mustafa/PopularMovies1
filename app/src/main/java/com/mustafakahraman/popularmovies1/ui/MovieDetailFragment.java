@@ -198,5 +198,4 @@ public class MovieDetailFragment extends Fragment {
         }
         Timber.d("populateUIWithMovieData finished");
     }
-
 }
