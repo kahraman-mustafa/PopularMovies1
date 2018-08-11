@@ -11,44 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1838eb0b-3070-4ed4-bd3e-65b9203e4efa" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_8_8_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_timber_timber_4_7_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_16_0_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/SortingOrderModel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailViewModel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp-land/movie_catalog_activity.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_activity.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_fragment.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_catalog_item.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_detail_activity.xml" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.5/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.5/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/data/MovieDao.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/Connection.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionLiveData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/ConnectionLiveData.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/model/Movie.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogViewModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesViewModel.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetail.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalog.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/SortingOrderModel.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_catalog.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_catalog.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,8 +37,8 @@
       <file leaf-file-name="MoviesCatalogFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="203" column="116" lean-forward="false" selection-start-line="203" selection-start-column="116" selection-end-line="203" selection-end-column="116" />
+            <state relative-caret-position="223">
+              <caret line="446" column="43" lean-forward="true" selection-start-line="446" selection-start-column="18" selection-end-line="446" selection-end-column="43" />
               <folding>
                 <element signature="e#3435#3436#0" expanded="true" />
                 <element signature="e#3474#3475#0" expanded="true" />
@@ -125,7 +88,7 @@
       <file leaf-file-name="CatalogAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
+            <state relative-caret-position="-29">
               <caret line="127" column="9" lean-forward="true" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
               <folding>
                 <element signature="e#971#978#0" expanded="true" />
@@ -159,8 +122,8 @@
       <file leaf-file-name="movie_detail_fragment.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
+            <state relative-caret-position="105">
+              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -172,13 +135,13 @@
       <file leaf-file-name="NetworkUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+            <state relative-caret-position="975">
+              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
               <folding>
-                <element signature="e#2080#2087#0" expanded="true" />
-                <element signature="e#4541#4584#0" expanded="true" />
-                <element signature="e#4724#5240#0" expanded="true" />
-                <element signature="e#5239#5240#0" expanded="true" />
+                <element signature="e#2106#2113#0" expanded="true" />
+                <element signature="e#4087#4130#0" expanded="true" />
+                <element signature="e#4272#4788#0" expanded="true" />
+                <element signature="e#4787#4788#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3010,10 +2973,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
+        <state relative-caret-position="242">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -3021,10 +2984,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/movie_detail_fragment.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="480">
+          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/movie_detail_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -3040,6 +3011,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="127" column="9" lean-forward="true" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
+          <folding>
+            <element signature="e#971#978#0" expanded="true" />
+            <element signature="method#getItemAtPosition#0;class#CatalogAdapter#0" expanded="false" />
+            <element signature="e#5027#5072#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MovieDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1624">
@@ -3050,8 +3033,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/MoviesCatalogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="203" column="116" lean-forward="false" selection-start-line="203" selection-start-column="116" selection-end-line="203" selection-end-column="116" />
+        <state relative-caret-position="223">
+          <caret line="446" column="43" lean-forward="true" selection-start-line="446" selection-start-column="18" selection-end-line="446" selection-end-column="43" />
           <folding>
             <element signature="e#3435#3436#0" expanded="true" />
             <element signature="e#3474#3475#0" expanded="true" />
@@ -3061,35 +3044,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/ui/CatalogAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="127" column="9" lean-forward="true" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
-          <folding>
-            <element signature="e#971#978#0" expanded="true" />
-            <element signature="method#getItemAtPosition#0;class#CatalogAdapter#0" expanded="false" />
-            <element signature="e#5027#5072#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mustafakahraman/popularmovies1/helper/NetworkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+        <state relative-caret-position="975">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
           <folding>
-            <element signature="e#2080#2087#0" expanded="true" />
-            <element signature="e#4541#4584#0" expanded="true" />
-            <element signature="e#4724#5240#0" expanded="true" />
-            <element signature="e#5239#5240#0" expanded="true" />
+            <element signature="e#2106#2113#0" expanded="true" />
+            <element signature="e#4087#4130#0" expanded="true" />
+            <element signature="e#4272#4788#0" expanded="true" />
+            <element signature="e#4787#4788#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -42,7 +42,7 @@ public class NetworkUtils {
     private static final String KEY_PAGE = "page";
     private static final String VALUE_APIKEY = "YOUR_API_KEY_HERE";
     private static final String VALUE_LANGUAGE_EN = "en-US";
-    private static boolean isInternetAvailable = false;
+    public static boolean isInternetAvailable = false;
 
     public static JSONObject getHttpJSONResponse(String url) throws IOException, JSONException {
 
@@ -58,7 +58,7 @@ public class NetworkUtils {
 
     }
 
-    public static ArrayList<Movie> extractMoviesFromJSON(JSONObject jsonCatalog) throws JSONException {
+    public static ArrayList<Movie> extractMoviesFromJSON(JSONObject jsonCatalog, ArrayList<Long> favIdList) throws JSONException {
 
         ArrayList<Movie> movieList = new ArrayList<Movie>();
 
@@ -76,23 +76,10 @@ public class NetworkUtils {
             Log.d("Vote Average: " + movieTitle, String.valueOf(movieVoteAvg));
             String moviePosterUrl = jsonMovie.optString("poster_path", "");
             String moviePlotSynopsis = jsonMovie.optString("overview", "Story Not Available");
-            boolean isPopular, isTopRated, isFavorite;
-
-            if(MoviesCatalog.moviesOrderType.equals(NetworkUtils.ORDER_BY_POPULARITY)) {
-                isPopular = true;
-                isTopRated = false;
-            } else if (MoviesCatalog.moviesOrderType.equals(NetworkUtils.ORDER_BY_TOPRATED)) {
-                isPopular = false;
-                isTopRated = true;
-            } else {
-                isPopular = false;
-                isTopRated = false;
-            }
-
-            isFavorite = false;
+            boolean isFavorite = favIdList.contains(movieID);
 
             Movie movieToInsert = new Movie(movieID, movieTitle, DateConverter.toDate(movieReleaseDate), moviePosterUrl,
-                    movieVoteAvg, moviePlotSynopsis, isFavorite, isPopular, isTopRated);
+                    movieVoteAvg, moviePlotSynopsis, isFavorite);
 
             movieList.add(movieToInsert);
         }
@@ -127,7 +114,7 @@ public class NetworkUtils {
         return context.getString(R.string.POSTER_BASE_URL) + posterSize + posterPath;
     }
 
-    public static boolean getIsInternetAvailable() {
+    public static void controlInternetAvailability() {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
@@ -142,7 +129,6 @@ public class NetworkUtils {
                 }
             }
         });
-        return isInternetAvailable;
     }
 
 }
