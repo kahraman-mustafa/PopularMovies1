@@ -10,48 +10,72 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
 import com.mustafakahraman.popularmovies1.model.Movie;
+import com.mustafakahraman.popularmovies1.model.Review;
+import com.mustafakahraman.popularmovies1.model.Video;
 
 import java.util.List;
 
 @Dao
 public interface MovieDao {
 
-    @Query("SELECT * FROM movie WHERE is_favorite = 1 ORDER BY vote_avg")
-    LiveData<List<Movie>> loadFavoriteMovies();
-
     @Query("SELECT _id FROM movie WHERE is_favorite = 1")
     LiveData<List<Long>> getFavoriteMovieIds();
 
-    @Query("SELECT COUNT(*) FROM movie WHERE is_favorite = 1")
-    long getNumberOfSavedFavoriteMovies();
+    @Query("SELECT * FROM movie WHERE is_favorite = 1 ORDER BY vote_avg")
+    LiveData<List<Movie>> loadFavoriteMovies();
 
-    @Query("SELECT COUNT(*) FROM movie WHERE is_favorite = 1 AND _id=:id")
-    long getIsMovieFavorite(long id);
+    @Query("SELECT review.* FROM movie, review WHERE movie._id = review.movie_id AND movie.is_favorite = 1")
+    LiveData<List<Review>> loadReviewsOfFavoriteMovies();
 
-    /*@Query("SELECT * FROM movie WHERE is_popular = 1")
-    LiveData<List<Movie>> loadPopularMovies();
-
-    @Query("SELECT * FROM movie WHERE is_top_rated = 1")
-    LiveData<List<Movie>> loadTopRatedMovies();
-
-    @Query("SELECT COUNT(*) FROM movie WHERE is_popular = 1")
-    long getNumberOfSavedPopularMovies();
-
-    @Query("SELECT COUNT(*) FROM movie WHERE is_top_rated = 1")
-    long getNumberOfSavedTopRatedMovies();*/
+    @Query("SELECT video.* FROM movie, video WHERE movie._id = video.movie_id AND movie.is_favorite = 1")
+    LiveData<List<Video>> loadVideosOfFavoriteMovies();
 
     @Insert
     void insertMovie(Movie movie);
 
+    /*Marks a method in a Dao annotated class as an insert method.
+    The implementation of the method will insert its parameters into the database.
+    All of the parameters of the Insert method must either be classes annotated with Entity or collections/array of it.
+    Example:
+    @Dao
+    public interface MyDao {
+        @Insert(onConflict = OnConflictStrategy.REPLACE)
+        public void insertUsers(User... users);
+        @Insert
+        public void insertBoth(User user1, User user2);
+        @Insert
+        public void insertWithFriends(User user, List<User> friends);
+    }*/
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertReviews(List<Review> reviews);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertVideos(List<Video> videos);
+
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateMovie(Movie movie);
+
+    /*Marks a method in a Dao annotated class as a delete method.
+    The implementation of the method will delete its parameters from the database.
+    All of the parameters of the Delete method must either be classes annotated with Entity or collections/array of it.
+    Example:
+    @Dao
+    public interface MyDao {
+        @Delete
+        public void deleteUsers(User... users);
+        @Delete
+        public void deleteAll(User user1, User user2);
+        @Delete
+        public void deleteWithFriends(User user, List<User> friends);
+    }*/
 
     @Delete
     void deleteMovie(Movie movie);
 
-    /*@Query("DELETE FROM movie WHERE is_favorite = 0")
-    void deleteNonFavoriteMovies();*/
+    @Delete
+    void deleteReviews(List<Review> reviews);
 
-    @Query("SELECT * FROM movie WHERE _id = :id")
-    LiveData<Movie> loadMovieById(int id);
+    @Delete
+    void deleteVideos(List<Video> videos);
 }

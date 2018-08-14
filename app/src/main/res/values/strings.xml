@@ -2,6 +2,8 @@
     <string name="app_name">Popular Movies</string>
 
     <string name="INTENT_KEY_MOVIE">movie_data</string>
+    <string name="INTENT_KEY_REVIEWS">reviews</string>
+    <string name="INTENT_KEY_VIDEOS">videos</string>
     <string name="INTENT_KEY_MOVIE_CATALOG">movie_catalog_data</string>
     <string name="INTENT_KEY_VIEWMODEL">view_model</string>
     <!--
@@ -24,6 +26,8 @@
 
     <!-- Catalog Activity -->
     <string name="error_message">Failed to get results, please try again.</string>
+    <string name="error_disconnected">Network disconnected</string>
+    <string name="error_internet_not_available">Internet is not available.</string>
     <string name="error_none_toprated">Failed to show top rated movies</string>
     <string name="error_none_popular">Failed to show popular movies</string>
     <string name="error_none_favorite">You have no favorite movie yet.</string>
@@ -45,6 +49,13 @@
     <string name="text_title">Movie Title</string>
     <string name="text_release_date">Release Date</string>
     <string name="text_overview">Movie Overview</string>
+    <string name="label_reviews">Reviews</string>
+    <string name="text_review_content">Review Content</string>
+    <string name="text_review_author">by Author</string>
+    <string name="text_review_url">Review Source</string>
+    <string name="text_video_type">Video Type</string>
+    <string name="text_video_name">Video Name</string>
+    <string name="label_videos">Videos</string>
 
     <!-- Content descriptions-->
     <string name="movie_poster_content_description">Movie Poster</string>

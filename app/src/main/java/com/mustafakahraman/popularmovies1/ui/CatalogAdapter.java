@@ -35,7 +35,6 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
 
     private int selectedPos = RecyclerView.NO_POSITION;
     MoviesViewModel moviesViewModel;
-    private String mOrderType;
 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
@@ -51,7 +50,6 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.MovieVie
         mContext = context;
         this.mMovieList = movies;
         this.moviesViewModel = moviesViewModel;
-        mOrderType = moviesOrderType;
     }
 
     @NonNull

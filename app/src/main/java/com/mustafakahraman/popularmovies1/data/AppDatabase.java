@@ -8,8 +8,10 @@ import android.content.Context;
 import android.util.Log;
 
 import com.mustafakahraman.popularmovies1.model.Movie;
+import com.mustafakahraman.popularmovies1.model.Review;
+import com.mustafakahraman.popularmovies1.model.Video;
 
-@Database(entities = {Movie.class}, version = 1, exportSchema = false)
+@Database(entities = {Movie.class, Review.class, Video.class}, version = 1, exportSchema = false)
 @TypeConverters(DateConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
 

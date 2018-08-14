@@ -9,11 +9,11 @@ import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
 
 public class SortingOrderModel extends AndroidViewModel {
 
-    private MutableLiveData<String> mSortOder;
+    private MutableLiveData<String> mSortOder = new MutableLiveData<String>();
 
     public SortingOrderModel(Application application) {
         super(application);
-        mSortOder = new MutableLiveData<String>();
+        mSortOder.setValue("popular");
     }
 
     public MutableLiveData<String> getSortOder() {

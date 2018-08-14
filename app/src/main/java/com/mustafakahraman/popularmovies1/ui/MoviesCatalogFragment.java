@@ -15,8 +15,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.mustafakahraman.popularmovies1.R;
@@ -27,6 +27,8 @@ import com.mustafakahraman.popularmovies1.helper.ItemOffsetDecoration;
 import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
 import com.mustafakahraman.popularmovies1.helper.SortingOrderModel;
 import com.mustafakahraman.popularmovies1.model.Movie;
+import com.mustafakahraman.popularmovies1.model.Review;
+import com.mustafakahraman.popularmovies1.model.Video;
 
 import org.json.JSONException;
 
@@ -59,9 +61,17 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
     private Handler conChangeHandler = new Handler();
     private Handler favDBListHandler = new Handler();
     private Handler internetControlHandler = new Handler();
+    private Handler reviewVideoHandler = new Handler();
 
     private boolean mIsTwoPane = false;
     private boolean mIsFetchingProgress;
+
+    private final int FETCH_CODE_MOVIE = 11;
+    private final int FETCH_CODE_REVIEW = 12;
+    private final int FETCH_CODE_VIDEO = 13;
+
+    private boolean FLAG_REVIEW_FOUND_INMODEL;
+    private boolean FLAG_VIDEO_FOUND_INMMODEL;
 
     // Mandatory empty constructor
     public MoviesCatalogFragment() {
@@ -71,23 +81,135 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
     // When a movie is clicked, this initialize opening detail activiy screen using selected movie info
     @Override
     public void onItemClick(int position) {
-        Movie movie = mCatalogAdapter.getItemAtPosition(position);
-        if(mIsTwoPane) {
-            movieDetailViewModel.getMovie().setValue(movie);
+        final Movie movie = mCatalogAdapter.getItemAtPosition(position);
+        ArrayList<Review> tempReviews = addReviewsForIntent(movie.get_id());
+        ArrayList<Video> tempVideos = addVideosForIntent(movie.get_id());
+
+        // if temp arrays has values that means values are come from directly view model
+        // if not that means data will be fetched from internet, so wait for 1800 ms for finishing fetching progress
+        if(FLAG_REVIEW_FOUND_INMODEL && FLAG_VIDEO_FOUND_INMMODEL){
+            setupSending(movie, tempReviews, tempVideos);
         } else {
-            startDetailActivity(movie);
+            displayLoading();
+            reviewVideoHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    setupSending(movie, addReviewsForIntent(movie.get_id()), addVideosForIntent(movie.get_id()));
+                }
+            }, 2000);
+        }
+    }
+
+    private void setupSending(Movie movie, ArrayList<Review> reviews, ArrayList<Video> videos) {
+        if(mIsTwoPane) {
+            movieDetailViewModel.getMovie().postValue(movie);
+            movieDetailViewModel.getReviews().postValue(reviews);
+            movieDetailViewModel.getVideos().postValue(videos);
+        } else {
+            Timber.d("Size of reviews : %s - setupSending()", reviews.size() );
+            Timber.d("Size of videos : %s - setupSending()", videos.size());
+            startDetailActivity(movie, reviews, videos);
         }
     }
 
     // Helper function to start detail activity
-    private void startDetailActivity(Movie movie) {
+    private void startDetailActivity(Movie movie, ArrayList<Review> reviews, ArrayList<Video> videos) {
         Context contextStartFrom = getActivity();
         Class classToOpen = MovieDetail.class;
 
         Intent intentOpenDetail = new Intent(contextStartFrom, classToOpen);
         intentOpenDetail.putExtra(getString(R.string.INTENT_KEY_MOVIE), movie); // using the (String key, Parcelable value) overload!
+        intentOpenDetail.putParcelableArrayListExtra(getString(R.string.INTENT_KEY_REVIEWS), reviews);
+        intentOpenDetail.putParcelableArrayListExtra(getString(R.string.INTENT_KEY_VIDEOS), videos);
 
         startActivity(intentOpenDetail);
+    }
+
+    private ArrayList<Review> addReviewsForIntent(final long movieId) {
+        ArrayList<Review> reviews = new ArrayList<Review>();
+
+        try {
+            // First check if selected movie is favorite or not, if so get reviews from favorite view model data
+            if (moviesViewModel.getFavoriteMovieIds().getValue().contains(movieId)) {
+                FLAG_REVIEW_FOUND_INMODEL = true;
+                Timber.d("Selected movie found in fav movie ids; reviews are gotten from favReviewModel");
+                if(moviesViewModel.getFavoriteMovieReviews().getValue() != null && moviesViewModel.getFavoriteMovieReviews().getValue().size() > 0) {
+                    for (Review review : moviesViewModel.getFavoriteMovieReviews().getValue()) {
+                        if (review.getMovieId() == movieId) {
+                            reviews.add(review);
+                        }
+                    }
+                }
+                return reviews;
+                // Secondly, check if selected movie is saved to review view model data before, if so get reviews from review view model data
+            } else if(moviesViewModel.getReviewMovieIds().getValue().contains(movieId)) {
+                FLAG_REVIEW_FOUND_INMODEL = true;
+                Timber.d("Selected movie found in review movie ids; reviews are gotten from reviewModel");
+                if(moviesViewModel.getReviews().getValue() != null && moviesViewModel.getReviews().getValue().size() > 0) {
+                    for(Review review: moviesViewModel.getReviews().getValue()) {
+                        if(review.getMovieId() == movieId) {
+                            reviews.add(review);
+                        }
+                    }
+                }
+                return reviews;
+                // If above options does not work, get reviews from internet. Then save them to temporary review view model data of MoviesViewModel
+            } else {
+                FLAG_REVIEW_FOUND_INMODEL = false;
+                Timber.d("Selected movie not found in view models; reviews are fetching from net");
+                fetchIfInternetAvailable(FETCH_CODE_REVIEW, movieId);
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            FLAG_REVIEW_FOUND_INMODEL = false;
+            Timber.d("Error catched, selected movie review will be fetched from net");
+            fetchIfInternetAvailable(FETCH_CODE_REVIEW, movieId);
+        }
+
+        return reviews;
+    }
+
+    private ArrayList<Video> addVideosForIntent(final long movieId) {
+        ArrayList<Video> videos = new ArrayList<>();
+
+        try {
+            // First check if selected movie is favorite or not, if so get reviews from favorite view model data
+            if (moviesViewModel.getFavoriteMovieIds().getValue().contains(movieId)) {
+                FLAG_VIDEO_FOUND_INMMODEL = true;
+                Timber.d("Selected movie found in fav movie ids; videos are gotten from favVideoModel");
+                if (moviesViewModel.getFavoriteMovieVideos().getValue() != null && moviesViewModel.getFavoriteMovieVideos().getValue().size() > 0) {
+                    for (Video video : moviesViewModel.getFavoriteMovieVideos().getValue()) {
+                        if (video.getMovieId() == movieId) {
+                            videos.add(video);
+                        }
+                    }
+                }
+                return videos;
+                // Secondly, check if selected movie is saved to review view model data before, if so get reviews from review view model data
+            } else if(moviesViewModel.getVideoMovieIds().getValue().contains(movieId)) {
+                FLAG_VIDEO_FOUND_INMMODEL = true;
+                Timber.d("Selected movie found in video movie ids; reviews are gotten from videoModel");
+                if(moviesViewModel.getVideos().getValue() != null && moviesViewModel.getVideos().getValue().size() > 0) {
+                    for (Video video : moviesViewModel.getVideos().getValue()) {
+                        if (video.getMovieId() == movieId) {
+                            videos.add(video);
+                        }
+                    }
+                }
+                return videos;
+                // If above options does not work, get reviews from internet. Then save them to temporary review view model data of MoviesViewModel
+            } else {
+                FLAG_VIDEO_FOUND_INMMODEL = false;
+                Timber.d("Selected movie not found in view models; videos are fetching from net");
+                fetchIfInternetAvailable(FETCH_CODE_VIDEO, movieId);
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            FLAG_VIDEO_FOUND_INMMODEL = false;
+            fetchIfInternetAvailable(FETCH_CODE_VIDEO, movieId);
+        }
+
+        return videos;
     }
 
     // Override onAttach to make sure that the container activity has implemented the callback
@@ -105,11 +227,12 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
         final View rootView = inflater.inflate(R.layout.movie_catalog_fragment, container, false);
 
         try {
-            if (getActivity().findViewById(R.id.llay_twopane_fragment) == null) {
+            /*if (getActivity().findViewById(R.id.llay_twopane_fragment) == null) {
                 mIsTwoPane = false;
             } else {
                 mIsTwoPane = true;
-            }
+            }*/
+            mIsTwoPane = false;
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -124,24 +247,9 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // initially display error because if no viewmodel data is available it is required to error be displayed
-        // in order to start fetching movies from  internet
-        displayLoading();
-        Timber.d("Loading displaying started : onCreateView()");
-
         moviesViewModel = ViewModelProviders.of(this).get(MoviesViewModel.class);
 
-        if(moviesViewModel.getIsFetchingProgress().getValue() == null ||
-                moviesViewModel.getIsFetchingProgress().getValue() != null &&
-                        !moviesViewModel.getIsFetchingProgress().getValue().equals(true) &&
-                        !moviesViewModel.getIsFetchingProgress().getValue().equals(false)) {
-            moviesViewModel.getIsFetchingProgress().postValue(false);
-            mIsFetchingProgress = false;
-            Timber.d("mIsFetchingProgress assigned first time: %s - onCreated()", mIsFetchingProgress);
-        } else {
-            mIsFetchingProgress = moviesViewModel.getIsFetchingProgress().getValue();
-            Timber.d("mIsFetchingProgress assigned: %s - onCreated()", mIsFetchingProgress);
-        }
+        mIsFetchingProgress = moviesViewModel.getIsFetchingProgress().getValue();
 
         if(mIsTwoPane) {
             movieDetailViewModel = ViewModelProviders.of(getActivity()).get(MovieDetailViewModel.class);
@@ -149,20 +257,16 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
         conViewModel = ViewModelProviders.of(this).get(ConnectionViewModel.class);
         sortingOrderModel = ViewModelProviders.of(this).get(SortingOrderModel.class);
 
-        if(sortingOrderModel.getSortOder().getValue() == null ||
-                sortingOrderModel.getSortOder().getValue() != null &&
-                        !sortingOrderModel.getSortOder().getValue().equals(NetworkUtils.ORDER_BY_TOPRATED) &&
-                        !sortingOrderModel.getSortOder().getValue().equals(NetworkUtils.ORDER_BY_POPULARITY) &&
-                        !sortingOrderModel.getSortOder().getValue().equals(NetworkUtils.ORDER_BY_FAVORITE)) {
-            sortingOrderModel.getSortOder().postValue(NetworkUtils.ORDER_BY_POPULARITY);
-            moviesOrderType = NetworkUtils.ORDER_BY_POPULARITY;
-            Timber.d("moviesOrderType assigned first time: %s - onCreated()", moviesOrderType);
-        } else {
-            moviesOrderType = sortingOrderModel.getSortOder().getValue();
-            Timber.d("moviesOrderType assigned: %s - onCreated()", moviesOrderType);
+        moviesOrderType = sortingOrderModel.getSortOder().getValue();
+
+        // initially display error because if no viewmodel data is available it is required to error be displayed
+        // in order to start fetching movies from  internet
+        if(hasMovieInfoInViewModel()){
+            displayLoading();
+            Timber.d("Loading displaying started : onCreateView()");
         }
 
-        setupMovieCatalogUI();
+        setupAdapters();
 
         setupSortingOrderModel();
         setupMoviesViewModel();
@@ -172,7 +276,16 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
 
         Timber.d("Called showMoviesFromMemoryOrInternet from : onActivityCreated()");
         showMoviesFromMemoryOrInternet();
+    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(hasMovieInfoInViewModel()) {
+            displayCatalog();
+        }
+        FLAG_REVIEW_FOUND_INMODEL = false;
+        FLAG_VIDEO_FOUND_INMMODEL = false;
     }
 
     @Override
@@ -182,7 +295,7 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
     }
 
     // Movies data is either downloaded or restored, then show them in UI
-    private void setupMovieCatalogUI() {
+    private void setupAdapters() {
         /*if (mIsTwoPane) {
             // Make sure our UI is in the correct state.
             try {
@@ -235,11 +348,11 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
                         switch (connection.getType()) {
                             case Connection.WifiData:
                                 Timber.d("ConnectionObserver WifiConnection Available");
-                                fetchMoviesIfCatalogNotVisible();
+                                fetchMoviesIfViewModelEmpty();
                                 break;
                             case Connection.MobileData:
                                 Timber.d("ConnectionObserver 3GConnection Available");
-                                fetchMoviesIfCatalogNotVisible();
+                                fetchMoviesIfViewModelEmpty();
                                 break;
                         }
                     } else {
@@ -247,7 +360,7 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
                         Timber.d("ConnectionObserver Not connected");
                         // Internet disconnected, Do something
                         if (pbLoadingBar.getVisibility() == View.VISIBLE) {
-                            displayError();
+                            displayError(R.string.error_disconnected);
                         }
                     }
                 } catch (NullPointerException e) {
@@ -268,6 +381,16 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
             }
         });
 
+        moviesViewModel.getIsErrorOccured().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean isOccured) {
+                if(isOccured) {
+                    displayError(moviesViewModel.getErrorMessage().getValue());
+                }
+                Timber.d("isErrorOccured changed: %s - moviesViewModel-onChanged()", isOccured);
+            }
+        });
+
         moviesViewModel.getPopularMovies().observe(this, new Observer<List<Movie>>() {
             @Override
             public void onChanged(@Nullable List<Movie> movieList) {
@@ -279,8 +402,7 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
                     }
                     else {
                         if(pbLoadingBar.getVisibility() != View.VISIBLE) {
-                            tvErrorMessage.setText(R.string.error_none_popular);
-                            displayError();
+                            displayError(R.string.error_none_popular);
                         }
                     }
                 }
@@ -297,8 +419,7 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
                         mCatalogAdapter.setMovieList(movieList);
                     } else {
                         if(pbLoadingBar.getVisibility() != View.VISIBLE) {
-                            tvErrorMessage.setText(R.string.error_none_favorite);
-                            displayError();
+                            displayError(R.string.error_none_favorite);
                         }
                     }
                 } else {
@@ -318,8 +439,7 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
                     }
                     else {
                         if(pbLoadingBar.getVisibility() != View.VISIBLE) {
-                            tvErrorMessage.setText(R.string.error_none_toprated);
-                            displayError();
+                            displayError(R.string.error_none_toprated);
                         }
                     }
                 }
@@ -335,84 +455,71 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
     }
 
     public void showMoviesFromMemoryOrInternet() {
-
-        switch (moviesOrderType){
-            case NetworkUtils.ORDER_BY_FAVORITE:
-                if(moviesViewModel.getFavoriteMovies().getValue() != null) {
-                    if(moviesViewModel.getFavoriteMovies().getValue().size() > 0) {
-                        mCatalogAdapter.setMovieList(moviesViewModel.getFavoriteMovies().getValue());
-                        displayCatalog();
-                    } else {
-                        Timber.d( "No favorite movies found to display");
-                        tvErrorMessage.setText(R.string.error_none_favorite);
-                        displayError();
-                    }
-                } else {
-                    Timber.d( "No favorite movies found to display");
-                    tvErrorMessage.setText(R.string.error_none_favorite);
-                    displayError();
-                }
-                break;
-            case NetworkUtils.ORDER_BY_POPULARITY:
-                if(moviesViewModel.getPopularMovies().getValue() != null) {
-                    if(moviesViewModel.getPopularMovies().getValue().size() > 0) {
-                        mCatalogAdapter.setMovieList(moviesViewModel.getPopularMovies().getValue());
-                        displayCatalog();
-                    } else {
-                        Timber.d("Called fetchMoviesIfInternetAvailable from : showMoviesFromMemoryOrInternet(), ORDER_BY_POPULARITY");
-                        fetchMoviesIfInternetAvailable();
-                    }
-                } else {
-                    Timber.d("Called fetchMoviesIfInternetAvailable from : showMoviesFromMemoryOrInternet(), ORDER_BY_POPULARITY");
-                    fetchMoviesIfInternetAvailable();
-                }
-                break;
-            case NetworkUtils.ORDER_BY_TOPRATED:
-                if(moviesViewModel.getTopRatedMovies().getValue() != null) {
-                    if(moviesViewModel.getTopRatedMovies().getValue().size() > 0) {
-                        mCatalogAdapter.setMovieList(moviesViewModel.getTopRatedMovies().getValue());
-                        displayCatalog();
-                    } else {
-                        Timber.d("Called fetchMoviesIfInternetAvailable from : showMoviesFromMemoryOrInternet(), ORDER_BY_TOPRATED");
-                        fetchMoviesIfInternetAvailable();
-                    }
-                } else {
-                    Timber.d("Called fetchMoviesIfInternetAvailable from : showMoviesFromMemoryOrInternet(), ORDER_BY_TOPRATED");
-                    fetchMoviesIfInternetAvailable();
-                }
-                break;
-            default:
-                break;
+        if(hasMovieInfoInViewModel()) {
+            switch (moviesOrderType) {
+                case NetworkUtils.ORDER_BY_FAVORITE:
+                    mCatalogAdapter.setMovieList(moviesViewModel.getFavoriteMovies().getValue());
+                    break;
+                case NetworkUtils.ORDER_BY_POPULARITY:
+                    mCatalogAdapter.setMovieList(moviesViewModel.getPopularMovies().getValue());
+                    break;
+                case NetworkUtils.ORDER_BY_TOPRATED:
+                    mCatalogAdapter.setMovieList(moviesViewModel.getTopRatedMovies().getValue());
+                    break;
+            }
+            displayCatalog();
+        } else {
+            if (!moviesOrderType.equals(NetworkUtils.ORDER_BY_FAVORITE)) {
+                Timber.d("Called fetchIfInternetAvailable from : showMoviesFromMemoryOrInternet(), %s", moviesOrderType);
+                fetchIfInternetAvailable(FETCH_CODE_MOVIE, -1);
+            } else {
+                Timber.d( "No favorite movies found to display");
+                displayError(R.string.error_none_favorite);
+            }
         }
     }
 
-    private void fetchMoviesIfCatalogNotVisible(){
+    private boolean hasMovieInfoInViewModel() {
+        try {
+            if (moviesOrderType.equals(NetworkUtils.ORDER_BY_POPULARITY) && moviesViewModel.getPopularMovies().getValue() != null && moviesViewModel.getPopularMovies().getValue().size() > 0
+                    || moviesOrderType.equals(NetworkUtils.ORDER_BY_TOPRATED) && moviesViewModel.getTopRatedMovies().getValue() != null && moviesViewModel.getTopRatedMovies().getValue().size() > 0
+                    || moviesOrderType.equals(NetworkUtils.ORDER_BY_FAVORITE) && moviesViewModel.getFavoriteMovies().getValue() != null && moviesViewModel.getFavoriteMovies().getValue().size() > 0) {
+                Timber.d("hasMovieInfoInViewModel() - TRUE");
+                return true;
+            } else {
+                Timber.d("hasMovieInfoInViewModel() - FALSE");
+                return false;
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            Timber.d("hasMovieInfoInViewModel() - FALSE");
+            return false;
+        }
+    }
+
+    private void fetchMoviesIfViewModelEmpty(){
         conChangeHandler.postDelayed(new Runnable() {
             public void run() {
-                if(tvErrorMessage.getVisibility() == View.VISIBLE || pbLoadingBar.getVisibility() == View.VISIBLE &
-                        (moviesOrderType.equals(NetworkUtils.ORDER_BY_POPULARITY) ||
-                                moviesOrderType.equals(NetworkUtils.ORDER_BY_TOPRATED))) {
-                    Timber.d("Called fetchMoviesIfInternetAvailable from : fetchMoviesIfCatalogNotVisible(), Waited 3000 ms");
-                    fetchMoviesIfInternetAvailable();
+                if(!hasMovieInfoInViewModel()) {
+                    fetchIfInternetAvailable(FETCH_CODE_MOVIE, -1);
                 }
             }
         }, 2100);   //2 seconds
     }
 
-    // Provided that internet is available, download movie data
-    // Called only when order type is selected as popularity or top rated
-    public void fetchMoviesIfInternetAvailable() {
 
-        if(!mIsFetchingProgress) {
+    public void fetchIfInternetAvailable(final int fetchCode, final long movieId) {
 
-            Timber.d("moviesViewModel.getIsFetchingProgress().postValue(true) : fetchMoviesIfInternetAvailable()");
-            moviesViewModel.getIsFetchingProgress().postValue(true);
+        if(!mIsFetchingProgress || fetchCode != FETCH_CODE_MOVIE) {
+
+            Timber.d("moviesViewModel.getIsFetchingProgress().postValue(true) : fetchIfInternetAvailable()");
+            if(fetchCode==FETCH_CODE_MOVIE) moviesViewModel.getIsFetchingProgress().postValue(true);
 
             displayLoading();
-            Timber.d("Loading bar displaying started : in fetchMoviesIfInternetAvailable()");
+            Timber.d("Loading bar displaying started : in fetchIfInternetAvailable()");
 
             if (NetworkUtils.isInternetAvailable) {
-                doFetchFromInternet();
+                doFetchFromInternet(fetchCode, movieId);
             }
 
             if (!NetworkUtils.isInternetAvailable) {
@@ -422,69 +529,95 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
                 internetControlHandler.postDelayed(new Runnable() {
                     public void run() {
                         // just wait completion of internet test
-                        Timber.d("Waited 1750 ms to check internet availability : in fetchMoviesIfInternetAvailable()");
+                        Timber.d("Waited 1750 ms to check internet availability : in fetchIfInternetAvailable()");
                         if (NetworkUtils.isInternetAvailable) {
-                            doFetchFromInternet();
+                            doFetchFromInternet(fetchCode, movieId);
                         } else {
-                            Timber.d("Could not fetch movies because internet not available : in fetchMoviesIfInternetAvailable()");
-                            tvErrorMessage.setText(R.string.error_message);
-                            Timber.d("moviesViewModel.getIsFetchingProgress().postValue(false) : fetchMoviesIfInternetAvailable()");
-                            moviesViewModel.getIsFetchingProgress().postValue(false);
-                            displayError();
+                            Timber.d("Could not fetch movies because internet not available : in fetchIfInternetAvailable()");
+                            Timber.d("moviesViewModel.getIsFetchingProgress().postValue(false) : fetchIfInternetAvailable()");
+                            if(fetchCode==FETCH_CODE_MOVIE) moviesViewModel.getIsFetchingProgress().postValue(false);
+                            displayError(R.string.error_internet_not_available);
                         }
                     }
-                }, 1750);   //2 seconds
+                }, 1300);   //2 seconds
             }
         }
     }
 
-    public void doFetchFromInternet() {
+    public void doFetchFromInternet(final int fetchCode, long movieId) {
         if(NetworkUtils.isInternetAvailable) {
-            Timber.d( "Movie fetching from internet started");
-            final String queryUrl = NetworkUtils.buildQueryUrl(moviesOrderType).toString();
-            Timber.d("Movie url : %s", queryUrl);
 
-            final ArrayList<Long> favIdList = (ArrayList<Long>) moviesViewModel.getFavoriteMovieIds().getValue();
+            final String queryUrl;
 
-            favDBListHandler.postDelayed(new Runnable() {
-                public void run() {
-                    // just for wait db operation
-                }
-            }, 250);   //2 seconds
+            if(fetchCode == FETCH_CODE_MOVIE) {
+                Timber.d("Movie fetching from internet started");
+                queryUrl = NetworkUtils.buildMovieCatalogUrl(moviesOrderType).toString();
+                Timber.d("Catalog url : %s", queryUrl);
 
-            AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                @Override
-                public void run() {
-                    try {
+                final ArrayList<Long> favIdList = (ArrayList<Long>) moviesViewModel.getFavoriteMovieIds().getValue();
+
+                favDBListHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        fetchUsingJson(fetchCode, queryUrl, -1, favIdList);
+                    }
+                }, 150);   //2 seconds
+            } else if(fetchCode == FETCH_CODE_REVIEW) {
+                queryUrl = NetworkUtils.buildMovieReviewUrl(movieId).toString();
+                Timber.d("Review url : %s", queryUrl);
+                fetchUsingJson(fetchCode, queryUrl, movieId, null);
+            } else if(fetchCode == FETCH_CODE_VIDEO) {
+                queryUrl = NetworkUtils.buildMovieVideoUrl(movieId).toString();
+                Timber.d("Video url : %s", queryUrl);
+                fetchUsingJson(fetchCode, queryUrl, movieId, null);
+            }
+        } else {
+            Timber.d("moviesViewModel.getIsFetchingProgress().postValue(false) : doFetchFromInternet()");
+            if(fetchCode==FETCH_CODE_MOVIE) moviesViewModel.getIsFetchingProgress().postValue(false);
+            Timber.d( "Could not fetch movies because internet not available: in doFetchFromInternet()");
+            displayError(R.string.error_internet_not_available);
+        }
+    }
+
+    private void fetchUsingJson(final int fetchCode, final String queryUrl, final long movieId, final ArrayList<Long> favIdList) {
+
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if(fetchCode == FETCH_CODE_MOVIE) {
+                        // Here favId list is used to detect and set favorite attribute of movies while downloading
+                        // and then show them as favorite in the movie catalog
                         List<Movie> movieList = NetworkUtils.extractMoviesFromJSON(NetworkUtils.getHttpJSONResponse(queryUrl),favIdList);
                         if (moviesOrderType.equals(NetworkUtils.ORDER_BY_POPULARITY)) {
                             moviesViewModel.getPopularMovies().postValue(movieList);
                         } else if (moviesOrderType.equals(NetworkUtils.ORDER_BY_TOPRATED)) {
                             moviesViewModel.getTopRatedMovies().postValue(movieList);
                         }
-                    } catch (JSONException e) {
-                        Timber.d( "Could not fetch movie from internet. Error message is shown");
-                        tvErrorMessage.setText(R.string.error_message);
-                        displayError();
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        Timber.d( "Could not fetch movie from internet. Error message is shown");
-                        tvErrorMessage.setText(R.string.error_message);
-                        displayError();
-                        e.printStackTrace();
-                    } finally {
-                        Timber.d("moviesViewModel.getIsFetchingProgress().postValue(false) : doFetchFromInternet()");
-                        moviesViewModel.getIsFetchingProgress().postValue(false);
+                    } else if(fetchCode == FETCH_CODE_REVIEW) {
+                        List<Review> reviews = NetworkUtils.extractReviewsFromJSON(NetworkUtils.getHttpJSONResponse(queryUrl), movieId);
+                        moviesViewModel.getReviews().postValue(reviews);
+                        moviesViewModel.getReviewMovieIds().getValue().add(movieId);
+                    } else if(fetchCode == FETCH_CODE_VIDEO) {
+                        List<Video> videos = NetworkUtils.extractVideosFromJSON(NetworkUtils.getHttpJSONResponse(queryUrl), movieId);
+                        moviesViewModel.getVideos().postValue(videos);
+                        moviesViewModel.getVideoMovieIds().getValue().add(movieId);
                     }
+                } catch (JSONException e) {
+                    Timber.d( "Could not fetch movie from internet. Error message is shown");
+                    moviesViewModel.getIsErrorOccured().postValue(true);
+                    moviesViewModel.getErrorMessage().postValue(R.string.error_message);
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Timber.d( "Could not fetch movie from internet. Error message is shown");
+                    moviesViewModel.getIsErrorOccured().postValue(true);
+                    moviesViewModel.getErrorMessage().postValue(R.string.error_message);
+                    e.printStackTrace();
+                } finally {
+                    Timber.d("moviesViewModel.getIsFetchingProgress().postValue(false) : doFetchFromInternet()");
+                    if(fetchCode==FETCH_CODE_MOVIE) moviesViewModel.getIsFetchingProgress().postValue(false);
                 }
-            });
-        } else {
-            Timber.d("moviesViewModel.getIsFetchingProgress().postValue(false) : doFetchFromInternet()");
-            moviesViewModel.getIsFetchingProgress().postValue(false);
-            Timber.d( "Could not fetch movies because internet not available: in doFetchFromInternet()");
-            tvErrorMessage.setText(R.string.error_message);
-            displayError();
-        }
+            }
+        });
     }
 
 
@@ -493,6 +626,7 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
         rvMovieCatalog.setVisibility(View.INVISIBLE);
         tvErrorMessage.setVisibility(View.INVISIBLE);
         pbLoadingBar.setVisibility(View.VISIBLE);
+        moviesViewModel.getIsErrorOccured().postValue(false);
     }
 
     // Helper method to show movie catalog view
@@ -500,13 +634,15 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
         rvMovieCatalog.setVisibility(View.VISIBLE);
         tvErrorMessage.setVisibility(View.INVISIBLE);
         pbLoadingBar.setVisibility(View.INVISIBLE);
+        moviesViewModel.getIsErrorOccured().postValue(false);
     }
 
     // Helper method to show error message
-    public void displayError() {
+    public void displayError(int errorStringResId) {
         rvMovieCatalog.setVisibility(View.INVISIBLE);
         tvErrorMessage.setVisibility(View.VISIBLE);
         pbLoadingBar.setVisibility(View.INVISIBLE);
+        tvErrorMessage.setText(errorStringResId);
     }
 
     @Override
@@ -552,11 +688,13 @@ public class MoviesCatalogFragment extends Fragment implements CatalogAdapter.It
         conChangeHandler.removeCallbacksAndMessages(null);
         favDBListHandler.removeCallbacksAndMessages(null);
         internetControlHandler.removeCallbacksAndMessages(null);
+        reviewVideoHandler.removeCallbacksAndMessages(null);
     }
 
     @Override
     public void onStop() {
         super.onStop();
         killAllHandlers();
+        moviesViewModel.getIsFetchingProgress().postValue(false);
     }
 }

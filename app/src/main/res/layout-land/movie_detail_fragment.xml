@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="400dp">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_hor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
 
         <FrameLayout
             android:id="@+id/fl_poster_container"
@@ -98,14 +112,15 @@
             app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/guideline_hor" />
 
-        <ScrollView
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/sv_plotsynopsis"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/fl_poster_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/fl_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/tv_label_plotsynopsis">
@@ -117,22 +132,83 @@
                 android:gravity="start"
                 android:text="@string/text_overview" />
 
-        </ScrollView>
+        </android.support.v4.widget.NestedScrollView>
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline_ver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4" />
+        <View
+            android:id="@+id/v_seperator1"
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:background="@android:color/background_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_poster_container"/>
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline_hor"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_label_reviews"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.25" />
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/label_reviews"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_seperator1"/>
+
+        <FrameLayout
+            android:id="@+id/fl_container_review"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_reviews">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_reviews"
+                tools:context="com.mustafakahraman.popularmovies1.ui.MovieDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_seperator2"
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:background="@android:color/background_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_container_review"/>
+
+        <TextView
+            android:id="@+id/tv_label_videos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/label_videos"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_seperator2"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_videos">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_videos"
+                tools:context="com.mustafakahraman.popularmovies1.ui.MovieDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
 
     </android.support.constraint.ConstraintLayout>
 
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>

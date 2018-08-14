@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,12 @@ import com.mustafakahraman.popularmovies1.R;
 import com.mustafakahraman.popularmovies1.data.DateConverter;
 import com.mustafakahraman.popularmovies1.helper.NetworkUtils;
 import com.mustafakahraman.popularmovies1.model.Movie;
+import com.mustafakahraman.popularmovies1.model.Review;
+import com.mustafakahraman.popularmovies1.model.Video;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,9 +34,9 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import timber.log.Timber;
 
-public class MovieDetailFragment extends Fragment {
+public class MovieDetailFragment extends Fragment implements VideoAdapter.ItemClickListener, ReviewAdapter.ItemClickListener{
 
-    Movie mMovie;
+    Movie mMovie = new Movie();
 
     @BindView(R.id.img_poster)
     ImageView imgPoster;
@@ -39,8 +46,12 @@ public class MovieDetailFragment extends Fragment {
     @BindView(R.id.tv_title) TextView tvTitle;
     @BindView(R.id.tv_date) TextView tvDate;
     @BindView(R.id.tv_plotsynopsis) TextView tvPlotsynopsis;
+    @BindView(R.id.rv_reviews) RecyclerView rvReviews;
+    @BindView(R.id.rv_videos) RecyclerView rvVideos;
     private Unbinder unbinder;
 
+    private ReviewAdapter mReviewAdapter;
+    private VideoAdapter mVideoAdapter;
     MovieDetailViewModel movieDetailViewModel;
     MovieDetailViewModel viewModelToPassWhenTwoPane;
 
@@ -58,10 +69,12 @@ public class MovieDetailFragment extends Fragment {
         Timber.d("onCreateView() - Started");
 
         try {
-            mIsTwoPane = !(getActivity().findViewById(R.id.llay_twopane_fragment) == null);
+            mIsTwoPane = false;
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+
+        setupAdapters();
 
         Timber.d("onCreateView() - Finished");
         return rootView;
@@ -104,6 +117,8 @@ public class MovieDetailFragment extends Fragment {
                 Timber.d("viewModelToPassWhenTwoPane info");
                 viewModelToPassWhenTwoPane = ViewModelProviders.of(getActivity()).get(MovieDetailViewModel.class);
                 movieDetailViewModel.getMovie().postValue(viewModelToPassWhenTwoPane.getMovie().getValue());
+                movieDetailViewModel.getReviews().postValue(viewModelToPassWhenTwoPane.getReviews().getValue());
+                movieDetailViewModel.getVideos().postValue(viewModelToPassWhenTwoPane.getVideos().getValue());
             } else {
                 try {
                     Timber.d("Intent info");
@@ -115,6 +130,34 @@ public class MovieDetailFragment extends Fragment {
             }
         }
         Timber.d("onActivityCreated() - Finished");
+    }
+
+    // Movies data is either downloaded or restored, then show them in UI
+    private void setupAdapters() {
+        /*if (mIsTwoPane) {
+            // Make sure our UI is in the correct state.
+            try {
+                FrameLayout container = (FrameLayout) getActivity().findViewById(R.id.fl_fr_movie_detail);
+                container.getChildAt(0).setVisibility(View.INVISIBLE);
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+        }*/
+
+        LinearLayoutManager reviewLayoutManager = new LinearLayoutManager(getActivity());
+        rvReviews.setLayoutManager(reviewLayoutManager);
+        LinearLayoutManager videoLayoutManager = new LinearLayoutManager(getActivity());
+        rvVideos.setLayoutManager(videoLayoutManager);
+
+        mReviewAdapter = new ReviewAdapter(new ArrayList<Review>());
+        mReviewAdapter.setClickListener(this);
+        rvReviews.setAdapter(mReviewAdapter);
+
+        mVideoAdapter = new VideoAdapter(new ArrayList<Video>());
+        mVideoAdapter.setClickListener(this);
+        rvVideos.setAdapter(mVideoAdapter);
+
+        rvReviews.setNestedScrollingEnabled(false);
     }
 
     @Override
@@ -134,7 +177,11 @@ public class MovieDetailFragment extends Fragment {
     private void setMovieDataByIntent(Intent intent){
         if(intent.hasExtra(getString(R.string.INTENT_KEY_MOVIE))){
             Movie movie = (Movie) intent.getParcelableExtra(getString(R.string.INTENT_KEY_MOVIE));
+            ArrayList<Review> reviews = intent.getParcelableArrayListExtra(getString(R.string.INTENT_KEY_REVIEWS));
+            ArrayList<Video> videos = intent.getParcelableArrayListExtra(getString(R.string.INTENT_KEY_VIDEOS));
             movieDetailViewModel.getMovie().postValue(movie);
+            movieDetailViewModel.getReviews().postValue(reviews);
+            movieDetailViewModel.getVideos().postValue(videos);
         }  else {
             closeOnError();
         }
@@ -152,11 +199,26 @@ public class MovieDetailFragment extends Fragment {
         movieDetailViewModel.getMovie().observe(this, new Observer<Movie>() {
             @Override
             public void onChanged(@Nullable Movie movie) {
-                Timber.d("movieDetailViewModel observer change");
+                Timber.d("movieDetailViewModel movie observer change");
                 mMovie = movie;
                 populateUIWithMovieData();
             }
         });
+        movieDetailViewModel.getVideos().observe(this, new Observer<List<Video>>() {
+            @Override
+            public void onChanged(@Nullable List<Video> videos) {
+                Timber.d("movieDetailViewModel video observer change");
+                populateUIWithMovieData();
+            }
+        });
+        movieDetailViewModel.getReviews().observe(this, new Observer<List<Review>>() {
+            @Override
+            public void onChanged(@Nullable List<Review> reviews) {
+                Timber.d("movieDetailViewModel review observer change");
+                populateUIWithMovieData();
+            }
+        });
+
     }
 
     @OnClick(R.id.img_favorite)
@@ -174,6 +236,10 @@ public class MovieDetailFragment extends Fragment {
         //rbVoteAvg.setMax(10);
         //rbVoteAvg.setStepSize(0.1f);
         Timber.d("populateUIWithMovieData started");
+
+        mReviewAdapter.setReviewList((ArrayList<Review>) movieDetailViewModel.getReviews().getValue());
+        mVideoAdapter.setVideoList((ArrayList<Video>) movieDetailViewModel.getVideos().getValue());
+
         Picasso.with(getActivity())
                 .load(NetworkUtils.buildPosterUrl(
                         getActivity(),
@@ -197,5 +263,10 @@ public class MovieDetailFragment extends Fragment {
             imgFavorite.setImageResource(R.drawable.star_disabled);
         }
         Timber.d("populateUIWithMovieData finished");
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
     }
 }
